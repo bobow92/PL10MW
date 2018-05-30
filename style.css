@@ -365,3 +365,15 @@ footer p{
 footer span {
 	float: right;
 }
+
+
+
+
+@media queries and (min-width: 992px) and (max-width: 1198.2px){
+
+	img{
+		width: 40%;
+		display: none;
+	}
+
+}
