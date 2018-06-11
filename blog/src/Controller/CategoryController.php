@@ -5,7 +5,7 @@
 namespace Controller;
 
 
-class ArticleController extends Controller{
+class CategoryController extends Controller{
 
 	public function afficheAll(){
 		
@@ -14,10 +14,10 @@ class ArticleController extends Controller{
 		$articles = $this -> getModel() -> getAllArticles();
 
 		$params = array(
-			'articles' => $articles
+			'categorys' => $categorys
 			
 			);
-		return $this -> render('layout.html','articles_view.html',$params);
+		return $this -> render('layout.html','articles_view.php',$params);
 		// 2 : Afficher la vue
 
 		// require __DIR__.'/../View/articles_view.php';
@@ -25,20 +25,20 @@ class ArticleController extends Controller{
 	}
 
 	public function affiche($id){
-		$articles = $this -> getModel() -> getArticleById($id);
 		$params = array(
 			'articles' => $articles,
-		
+			'category' => $category,
+			'author' => $author,
+			'comment' => $comment
 			
 			);
-
 		// 1 : Recuperer les infos en BDD
 
-		
+		$articles = $this -> getModel() -> getArticleById($id);
 
 		// 2 : Afficher la vue
 
-		return $this -> render('layout.html','view_articles.html',$params);	
+		// require __DIR__.'/../View/view_articles.php'; 	
 	}
 
 

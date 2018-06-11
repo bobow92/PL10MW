@@ -14,7 +14,19 @@ class ArticleModel extends Model{
 
 
 	public function getArticleById($id){
-		return $this -> find($id);
+		$produit = $this -> getModel() -> getArticleById($id);
+        $prod = $this -> getModel() -> getCategoryById($id);
+		$params = array(
+			
+            'articles' => $articles,
+            'category' => $category,
+        
+        );
+
+		return $this -> render('layout.html', 'view_articles.html', $params);
+	
+	
+	
 	}
 
 	public function DeleteArticleById($id){
@@ -28,7 +40,6 @@ class ArticleModel extends Model{
 	public function RegisterArticle(){
 		return $this -> register();
 		$resultat = "INSERT INTO author (name, firstname, email, birth_date) VALUES (:name,:firstname,:email,:birth_date )";
-
 		$resultat = $pdo -> prepare($sql);
 		$resultat -> bindValue(':name', $_POST['name'], PDO::PARAM_STR);
 		$resultat -> bindValue(':firstname', $_POST['firstname'], PDO::PARAM_STR);

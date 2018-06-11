@@ -9,7 +9,10 @@ use Model;
 class Controller
 {
     protected $model; // Contiendra un bojet du modle correspondant à l'entité dans laquelle nous sommes : PostController => PostModel 
-    
+    protected $url; 
+
+
+
     public function __construct(){
         $class = 'Model\\' . str_replace(array('Controller\\', 'Controller'), '', get_called_class()) . 'Model';
         //$class = Model\ . Controller\PostController . Model
@@ -18,7 +21,9 @@ class Controller
     	
         $this -> model = new $class;
  		// J'instancie le model attendu et le stock dans $this -> model
-      	
+        // $config = new Config;
+        // $site = $config -> getParametersSite();
+        // $this -> url = $site['url'];
     
     }
     
@@ -29,11 +34,16 @@ class Controller
     public function render($layout, $view, $params){
         
        $dirView = __DIR__ . '/../../src/View/';
-       
+
+       $dirFile = str_replace(array('Controller\\','Controller'), '', get_called_class()) . '/';
+
        $path_view = $dirView . $view;
        
        $path_layout = $dirView . $layout;
        
+
+       $params['url'] = $this -> url;
+
        extract($params);
        
        ob_start();

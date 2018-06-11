@@ -13,6 +13,8 @@
     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Custom styles for this template -->
+
+    
     <link href="css/blog.css" rel="stylesheet">
 
   </head>
@@ -35,7 +37,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto userbar">
             <li class="nav-item active">
               <a class="nav-link" href="#">ACCUEIL
                 <span class="sr-only">(current)</span>
@@ -45,12 +47,14 @@
               <a class="nav-link" href="#">PRENDRE RENDEZ-VOUS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">BLOG</a>
+              <a class="nav-link" href="index.php">BLOG</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">A PROPOS</a>
             </li>
-            
+          </ul>
+          <ul class="navbar-nav ml-auto userbar">
+             
             <li class="nav-item">
               <a class="nav-link" href="inscription.php">INSCRIPTION</a>
             </li>
@@ -58,7 +62,9 @@
               <a class="nav-link" href="#">CONNEXION</a>
             </li>
           </ul>
+          
         </div>
+
       </div>
     </nav>
 
@@ -73,10 +79,10 @@
 
           <!-- Search Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Search</h5>
+            <h5 class="card-header">Recherche</h5>
             <div class="card-body">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control" placeholder="Que cherchez vous ?">
                 <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button">Go!</button>
                 </span>
@@ -108,24 +114,34 @@
 
           <!-- Side Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
+            <h5 class="card-header">Newsletter</h5>
             <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+             <div class="input-group">
+                <input type="mail" class="form-control" placeholder="abcde@12345.fr">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
             </div>
           </div>
 
         </div>
         <!-- Blog Entries Column -->
         <div class="col-md-8">
-          <?= $content ?>
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-          </h1>
+          <div class="profiling">
+                   <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="">Compte</a></li>
+            <li class="nav-item"><a href="">Message</a></li>
+            <li class="nav-item"><a href="">News</a></li>
+            <li class="nav-item"><a href="">Notification</a></li>
+            <li class="nav-item"><a href="">Deconnexion</a></li>
+          </ul>
+          </div>
 
-          <!-- Blog Post -->
-          
-        <!-- Sidebar Widgets Column -->
-      </div>
+
+
+          <?= $content ?>
+        </div>
 
       <!-- /.row -->
 
@@ -135,7 +151,7 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+        <p class="m-0 text-center text-white">Copyright &copy; 10MentionWeb - WF3   .  2017 - 2018</p>
       </div>
       <!-- /.container -->
     </footer>
@@ -145,6 +161,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/cookies.js"></script>
+<!-- Fichier JS pour Cookies  -->
   </body>
 
 </html>
+ 

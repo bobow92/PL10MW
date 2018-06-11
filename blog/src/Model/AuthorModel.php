@@ -13,24 +13,24 @@ class ArticleModel extends Model{
 		$requete = "SELECT * FROM author";
 		$resultat->bindValue(':id_author',$id_author, PDO::PARAM_STR);
 		$resultat->execute();
-		$resultat->setFetchMode(PDO::FETCH_CLASS, 'Entity\Article');
+		$resultat->setFetchMode(PDO::FETCH_CLASS, 'Entity\Author');
 		$donnees = $resultat->fetchall();
 	}
 
 
-	public function getArticleById($id){
+	public function getAuthorById($id){
 		return $this -> find($id);
 	}
 
-	public function DeleteArticleById($id){
+	public function DeleteAuthorById($id){
 		return $this -> delete($idv);
 	}
 
-	public function UpdateArticleById($id){
+	public function UpdateAuthorById($id){
 		return $this -> update($id);
 	}
 
-	public function RegisterArticle(){
+	public function RegisterAuthor(){
 		return $this -> register();
 		$resultat = "INSERT INTO author (name, firstname, email, birth_date) VALUES (:name,:firstname,:email,:birth_date )";
 
@@ -42,19 +42,5 @@ class ArticleModel extends Model{
 
 	}
 
-	public function GetArticleByCategory($cat){
-		$requete = "SELECT * FROM article. ON article.id_cat WHERE category.id_category = :id_category";
-		$resultat->bindValue(':id_category',$id_cat,PDO::PARAM_STR);
-		$resultat->execute();
-		$resultat->setFetchMode(PDO::FETCH_CLASS, 'Entity\Article');
-		$donnees = $resultat->fetchall();
-
-		if (!$donnees) {
-			return false;
-		}
-
-		else {
-			return $donnees;
-		}
-	}
+ 
 }

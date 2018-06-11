@@ -11,6 +11,7 @@ class Article{
 	private $id_author;
 	private $date_publication;
 	private $id_cat;
+	private $img_article;
 
 	// id_article
 	public function setId_article($arg){
@@ -69,6 +70,12 @@ class Article{
 	}
 
 
+	public function setImg_article($arg){
+		$this -> img_article = $arg;
+	}
+	public function getImg_article(){
+		return $this -> img_article;
+	}
 
 
 
