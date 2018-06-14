@@ -258,8 +258,20 @@ color: black!important;
 }
 
 
+.black {
+  color: black!important;
+  text-decoration: none!important;
+}
 
 
+
+.card-header{
+      background-color: mintcream!important;
+}
+
+.btn, .btn-secondary{
+  background-color: blue!important;
+}
 /*HOVER A - LINK - animation*/
 li > a {
   position: relative;
@@ -322,3 +334,4 @@ body {
     margin-left: 0px;
   }
 }
+

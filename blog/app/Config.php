@@ -17,6 +17,12 @@ class Config
         return $this -> parameters['connect'];
     	// Cette fonction a vocation à servir/apporter" les paramètres de connexion à la BDD
     }
+
+
+    public function getParametersSite(){
+
+        return $this -> parameters['site'];
+    }
 }
 
 

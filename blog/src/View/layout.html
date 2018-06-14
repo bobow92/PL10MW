@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="shortcut icon" type="image/x-icon" href="upload/favicon.ico">
     <title>Blog Home - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
@@ -39,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto userbar">
             <li class="nav-item active">
-              <a class="nav-link" href="#">ACCUEIL
+              <a class="nav-link" href="../../index.html">ACCUEIL
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -84,7 +84,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Que cherchez vous ?">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
+                  <button class="btn btn-secondary" type="button">Rechercher</button>
                 </span>
               </div>
             </div>
@@ -92,22 +92,18 @@
 
           <!-- Categories Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
+            <h5 class="card-header">Derniers Articles</h5>
             <div class="card-body">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                   <ul class="list-unstyled mb-0">
+                    <?php foreach($articles as $article) : ?>
                     <li>
-                      <a href="#"></a>
+                      <a href="#" class="black"><?=$article -> getTitle_article();?> - <?=$article -> getCategory();?></a>
                     </li>
+                    <?php endforeach; ?>
                 </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#"></a>
-                    </li>
-                  </ul>
-                </div>
+                 
               </div>
             </div>
           </div>
@@ -116,11 +112,13 @@
           <div class="card my-4">
             <h5 class="card-header">Newsletter</h5>
             <div class="card-body">
+              <form method="POST">
              <div class="input-group">
-                <input type="mail" class="form-control" placeholder="abcde@12345.fr">
+                <input type="mail" class="form-control" name="newsletter" placeholder="abcde@12345.fr">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
+                  <button class="btn btn-secondary" type="button">Envoyer</button>
                 </span>
+              </form>
               </div>
             </div>
           </div>

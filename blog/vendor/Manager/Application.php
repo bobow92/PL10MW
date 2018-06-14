@@ -11,18 +11,22 @@ final class Application
    public function __construct(){
        
        $tab = explode('/', $_SERVER['REQUEST_URI']);
-       
-       if(isset($tab[5]) && !empty($tab[5]) && file_exists(__DIR__ . '/../../src/Controller/'. ucfirst($tab[5]) . 'Controller.php'))
+      // echo "<pre>";
+      // var_dump($tab);
+      // echo "</pre>";
+
+
+       if(isset($tab[4]) && !empty($tab[4]) && file_exists(__DIR__ . '/../../src/Controller/'. ucfirst($tab[4]) . 'Controller.php'))
        {
-           $this -> controller = 'Controller\\' . ucfirst($tab[5]) . 'Controller';
+           $this -> controller = 'Controller\\' . ucfirst($tab[4]) . 'Controller';
        }
        else{
            $this -> controller = 'Controller\ArticleController';
        }
        
        
-       if(isset($tab[6]) && !empty($tab[6])){
-           $this -> action = $tab[6];
+       if(isset($tab[5]) && !empty($tab[5])){
+           $this -> action = $tab[5];
        }
        else{
            $this -> controller = 'Controller\ArticleController';
@@ -30,8 +34,8 @@ final class Application
        }
        
        
-       if(isset($tab[7]) && !empty($tab[7])){
-           $this -> argument = $tab[7];
+       if(isset($tab[6]) && !empty($tab[6])){
+           $this -> argument = $tab[6];
        }
    }
    
@@ -49,6 +53,12 @@ final class Application
        else{
            require __DIR__ . '/../../src/View/404.html';
        }
+   }
+
+
+   public function path(){
+
+    return 'http:localhost/leslie_pe/blog/web/article/afficheAll';
    }
    
 }

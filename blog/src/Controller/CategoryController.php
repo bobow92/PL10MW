@@ -11,10 +11,10 @@ class CategoryController extends Controller{
 		
 		// 1 : Recuperer les infos en BDD
 
-		$articles = $this -> getModel() -> getAllArticles();
+		$categorys = $this -> getModel() -> getAllCategorys();
 
 		$params = array(
-			'categorys' => $categorys
+			'categories' => $categories
 			
 			);
 		return $this -> render('layout.html','articles_view.php',$params);
@@ -27,9 +27,8 @@ class CategoryController extends Controller{
 	public function affiche($id){
 		$params = array(
 			'articles' => $articles,
-			'category' => $category,
-			'author' => $author,
-			'comment' => $comment
+			'categories' => $categories,
+		 
 			
 			);
 		// 1 : Recuperer les infos en BDD

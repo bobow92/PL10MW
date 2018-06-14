@@ -14,7 +14,7 @@ class AuthorController extends Controller{
 		$authors = $this -> getModel() -> getAllAuthors();
 
 		$params = array(
-			'authors' => $authors,
+			'authors' => $authors
 			);
 		return $this -> render('layout.html','articles_view.php',$params);
 		// 2 : Afficher la vue
@@ -26,9 +26,7 @@ class AuthorController extends Controller{
 	public function affiche($id){
 		$params = array(
 			'authors' => $authors,
-			'articles' => $articles,
-			'category' => $category,
-			'comment' => $comment
+
 			
 			);
 		// 1 : Recuperer les infos en BDD
