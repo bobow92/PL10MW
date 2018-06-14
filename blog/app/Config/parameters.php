@@ -8,7 +8,9 @@ $parameters = array(
 		'login'=> 'root',
 		'password'=>''
 	),
-	'security' => array()
+	'site' => array(
+		'url' => '/leslie_pe/blog/web/'
+	)
 );
 
 // echo "<pre>";

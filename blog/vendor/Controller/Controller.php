@@ -4,7 +4,7 @@
 
 namespace Controller;
 
-use Model;
+use Model, Config;
 
 class Controller
 {
@@ -21,9 +21,9 @@ class Controller
     	
         $this -> model = new $class;
  		// J'instancie le model attendu et le stock dans $this -> model
-        // $config = new Config;
-        // $site = $config -> getParametersSite();
-        // $this -> url = $site['url'];
+        $config = new Config;
+        $site = $config -> getParametersSite();
+        $this -> url = $site['url'];
     
     }
     

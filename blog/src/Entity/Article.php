@@ -10,7 +10,7 @@ class Article{
 	private $content;
 	private $id_author;
 	private $date_publication;
-	private $id_cat;
+	private $category;
 	private $img_article;
 
 	// id_article
@@ -61,12 +61,12 @@ class Article{
 
 
 
-	// id_cat
-	public function setId_cat($arg){
-		$this -> id_cat = $arg;
+	// category
+	public function setCategory($arg){
+		$this -> category = $arg;
 	}
-	public function getId_cat(){
-		return $this -> id_cat;
+	public function getCategory(){
+		return $this -> category;
 	}
 
 

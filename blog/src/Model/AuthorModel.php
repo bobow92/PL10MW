@@ -10,11 +10,7 @@ class ArticleModel extends Model{
 
 	public function getAllAuthors(){
 		return $this -> findAll();
-		$requete = "SELECT * FROM author";
-		$resultat->bindValue(':id_author',$id_author, PDO::PARAM_STR);
-		$resultat->execute();
-		$resultat->setFetchMode(PDO::FETCH_CLASS, 'Entity\Author');
-		$donnees = $resultat->fetchall();
+ 
 	}
 
 
