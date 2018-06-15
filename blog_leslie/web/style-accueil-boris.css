@@ -1,0 +1,465 @@
+/*
+1 Gardenia #f1e8df
+2 Cherry Blossom #f7cfe1
+3 Yellow Iris #eee78e
+4 Ultra Violet #5f4b8b
+5 Orchid Hush #cec3d2
+6 Peach Bud #fdb2a8
+7 Lettuce Green #bed38e
+8 Astral Aura #363151
+*/
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Libre Baskerville', serif;
+*/
+
+body {
+    width: 980px; 
+
+}
+
+.grid {
+    margin-bottom: 10%;
+}
+
+/* typographie */
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    color: white;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 5%;
+    letter-spacing: .05em;
+
+}
+
+/* typographie */
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+/* typographie */
+
+p {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    line-height: 2em;
+    color: #777;
+
+}
+
+p.name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5em;
+    line-height: 1em;
+    color: rgb(31, 70, 40);
+    font-weight: 700;
+}
+
+p.job-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: rgb(31, 70, 40);
+    text-transform: uppercase;
+    font-size: 2em;
+
+}
+
+p.location {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: rgb(31, 70, 40);
+    text-transform: uppercase;
+    font-size: 1em;
+    margin-bottom: 5%;
+
+}
+
+button {
+    border-style: none;  
+    background-color: #9fbc55;
+}
+button:hover {
+    background-color: #758d38;
+ 
+}
+
+
+p.button-texte {
+     font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: rgb(31, 70, 40);
+  padding: 1% 1%;
+    
+}
+
+p.bio {
+    margin-bottom: 10%;
+}
+
+
+
+/* bloc 2 icons rondes réseaux sociaux */
+
+.reseaux-sociaux {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5vh 0vw;
+}
+
+/* bloc 2 icons rondes réseaux sociaux */
+
+.reseaux-sociaux div {
+    padding: 2%;
+}
+
+/* grid "bilan de vitalité" */
+
+.grid-container-gauche {
+    display: grid;
+    grid-template-columns: 10% 4% 38% 6% 42%;
+    grid-template-rows: 50px 480px 35px 65px;
+    grid-gap: 0px;
+}
+
+/* template grid droite & "Education nutrionnelle" */
+
+.grid-container-droite {
+    display: grid;
+    grid-template-columns: 42% 6% 38% 4% 10%;
+    grid-template-rows: 50px 480px 35px 65px;
+    grid-gap: 0px;
+}
+
+
+/* grid fond  natropathie (introduction)*/
+
+.naturopathie-fond {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 4;
+    background: linear-gradient(to bottom right, rgb(190, 210, 140), rgb(230, 238, 210));
+}
+
+/* grid image natropathie (introduction) */
+
+.naturopathie-image {
+    grid-column: 2/ 4;
+    grid-row: 2;
+    background-image: url(img/stock-photo-water-drop-from-leaf-and-laboratory-for-natural-chemistry-concept-422217088.jpg);
+    background-size: 180%;
+    background-repeat: no-repeat;
+    background-position: top laft;
+}
+
+
+
+
+
+/* grid fond "bilan de vitalité" */
+
+.bilan-fond {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 4;
+    background: linear-gradient(to bottom right, #cec3d2, #e6e0e8);
+}
+
+/* grid image "bilan de vitalité" */
+
+.bilan-image {
+    grid-column: 3/ span 2;
+    grid-row: 2;
+    background-image: url(img/stock-photo-spa-background-with-bunches-of-fresh-lavender-flowers-and-bottles-of-natural-extracts-or-essential-668718346.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+
+
+.slogan {
+    grid-column: 1 /span 5;
+    grid-row: 4;
+    align-self: baseline;
+    justify-self: center;
+}
+
+
+
+
+
+/* grid fond "Education nutrionnelle  */
+
+.cont02-fond {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 4;
+     background: linear-gradient(to bottom right, #eee78e, #f1eca4);
+}
+
+/* grid bloc blanc "bilan de vitalité" */
+
+.bilan-blanc {
+    grid-column: 2 / 4;
+    grid-row: 1 / 4;
+    background-color: white;
+}
+
+.bilan-blanc-droite {
+    grid-column: 3 / 5;
+    grid-row: 1 / 4;
+    background-color: white;
+}
+
+
+
+/* grid image EDUCATION NUTRIIONELLE */
+
+.cont02-image {
+    grid-column: 2/ 4;
+    grid-row: 2;
+    background-image: url(img/stock-photo-back-lit-flash-photography-in-the-rain-581498992.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+/* GESTION DU STRESS */
+
+.stress-fond {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 4;
+        background: linear-gradient(to bottom right, #e9dbcd, #f1e8df);
+    
+ 
+}
+
+/* GESTION DU STRESS */
+
+.stress-image {
+    grid-column: 3/ span 2;
+    grid-row: 2;
+    background-image: url(img/stock-photo-beautiful-young-woman-in-spa-salon-591185735.jpg);
+    background-size: 180%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* GROSSESSE */
+
+.grossesse-fond {
+    grid-column: 1 / span 5;
+    grid-row: 1 / span 4;
+    background-color: #f7cfe1;
+      background: linear-gradient(to bottom right, #f7cfe1, #fbe5ef);
+}
+
+/* GROSSESSE */
+
+.grossesse-image {
+    grid-column: 2/ 4;
+    grid-row: 2;
+    background-image: url(img/stock-photo-pregnant-woman-in-dress-holds-hands-on-belly-on-a-white-background-pregnancy-maternity-707780656.jpg);
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+p.temoignages
+{
+    padding: 3% 20% 0% 20%;
+    font-style: italic;
+}
+
+p.temoignages-name
+{
+    padding: 0% 20%;
+     color: #fdb2a8;
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+p.button-temoignage {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fdb2a8;
+    margin: 4% auto;
+    padding: 1% 2%;
+    width: 35%;
+     font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    
+}
+
+
+p.button-temoignage:hover {
+    background-color: #fb705d;
+}
+
+/* slogan */
+
+h3.naturopathie {
+    color: rgba(159, 188, 85, 0.3);
+}
+
+
+h3.bilan {
+    color: rgba(95, 75, 139, 0.2);
+}
+	
+h3.cont02 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+h3.massage {
+    color: rgba(0, 0, 0, 0.2);
+
+}
+
+h3.grossesse {
+    color: rgba(236, 141, 184, 0.3);
+}
+
+h3.temoignages {
+    color: #fdb2a8;
+    text-align: center;
+}
+
+
+
+
+/* bloc texte dans chaque carton */
+
+.descriptif {
+    grid-column: 5;
+    grid-row: 2;
+    margin: 0vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descriptif-gauche {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0vh 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* responsive media queries */
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .grid-responsive {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 120px 150px 150px auto;
+
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .bilan-blanc {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .bilan-image {
+        display: grid;
+        grid-column: 1;
+        grid-row: 2 / span 3;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .image-responsive {
+        display: grid;
+        grid-column: 1;
+        grid-row: 2 / span 2;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .descriptif {
+        display: grid;
+        grid-column: 1;
+        grid-row: 4;
+        padding: 8% 5% 20% 5%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .bilan-slogan {
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h3 {
+        font-size: 3em;
+        padding: 2%;
+        text-align: right;
+        grid-row: 1;
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    p.temoignages {
+      padding: 1% 4%;
+
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    p.button-temoignage {
+      width: 80%;
+
+    }
+}
+
+
+
+
+
+
+/*
+.bilan2 {
+     background: linear-gradient(to bottom right, #bed38e, #d3e1b3);
+}
+*/
