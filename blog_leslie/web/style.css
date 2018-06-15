@@ -1,0 +1,363 @@
+/*
+1 Gardenia #f1e8df
+2 Cherry Blossom #f7cfe1
+3 Yellow Iris #eee78e
+4 Ultra Violet #5f4b8b
+5 Orchid Hush #cec3d2
+6 Peach Bud #fdb2a8
+7 Lettuce Green #bed38e
+8 Astral Aura #363151
+*/
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Libre Baskerville', serif;
+*/
+
+body {
+    width: 980px;
+    margin: 0 auto;
+    
+}
+
+.responsive-title {
+    display: none;
+}
+
+.social-media-responsive {
+       display: none; }
+
+nav {
+   background: linear-gradient(to bottom right, rgb(190, 210, 140), rgb(230, 238, 210));
+    height: 70px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+}
+nav li {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin: 1% 2%;
+    text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
+    font-size: .7em;
+    color: rgb(31,70,40);
+    list-style-type: none;
+    
+}
+
+
+.social-media-nav {
+    font-size: 1.4em;
+}
+
+
+
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8em;
+    color: #777;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 5%;
+    letter-spacing: .05em;
+    margin-top: 10%
+
+}
+
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    color: #777;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 5%;
+    letter-spacing: .05em;
+
+}
+
+/* typographie */
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: #777;
+}
+
+/* typographie */
+
+p, li {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    line-height: 2em;
+    color: #777;
+    margin-bottom: 5%;
+    list-style-type: square;
+
+}
+
+ul {
+    margin-bottom: 5%;
+}
+
+
+
+
+
+p.temoignages {
+        font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+       padding: 0% 0%;
+    margin: 0% 0%;
+}
+
+p.temoignage-nom {
+      font-family: 'Montserrat', sans-serif;
+    text-align: right;
+
+  
+}
+
+header  {
+    display: flex;
+    height: 200px;
+    width: 100%;
+}
+
+header div {
+    width: 20%;
+}
+
+header img {
+ width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+section {
+    margin: auto;
+    width: 550px;
+    
+}
+
+.checkbox {
+       font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    color: #777;
+}
+
+.boxes {
+    display: flex;
+    align-items: baseline;
+}
+.madame {
+    display: inline-block;
+    font-family: 'Libre Baskerville', serif;
+    font-size: em;
+    color: #777;
+    margin-bottom:5%;
+}
+
+
+#nom {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    color: #777;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: rgb(31,70,40);
+    margin-bottom:5%;
+}
+
+#email {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    color: #777;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: rgb(31,70,40);
+    margin-bottom: 5%;
+}
+
+#telephone {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    color: #777;
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: rgb(31,70,40);
+    margin-bottom: 5%;
+}
+
+#message {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1em;
+    color: #777;
+    border-style: solid;
+     border-width: 2px;
+    border-color: rgb(31,70,40);
+    margin-bottom: 2%;
+        padding: 2%;
+}
+
+.button {
+       font-family: 'Montserrat', sans-serif;
+    background-color: rgb(31,70,40);
+    color: white;
+    font-size: 1em;
+    text-transform: uppercase;
+    padding: 1% 3%;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+/* footer */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    background-color: #bed38e;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
+    font-size: 11px;
+    padding: 1.5% 1%;
+    margin-top: 5%;
+    color: rgba(255,255,255,0.8);
+    
+    
+}
+
+footer a {
+     color: rgba(255,255,255,0.8);
+}
+
+footer a:hover {
+     color: rgba(255,255,255,1);
+}
+
+footer a:visited {
+     color: rgba(255,255,255,0.8);
+}
+
+
+
+/* liens */
+
+a {
+    color: rgb(31,70,40);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgba(31,70,40,0.5);
+}
+
+a:visited {
+    color: rgb(31, 70, 40);
+}
+
+
+/* responsive media queries */
+
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .responsive-title {
+        display: block;
+        text-align: center;
+        font-size: 1.3em;
+        padding: 2% 0%;
+        color: rgb(31, 70, 40);
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    nav ul {
+    width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 1em;
+        justify-content: center;
+        padding-bottom: 5%;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    nav li {
+    background-color:  rgba(31, 70, 40, 0.3);
+        color: white;
+        padding: 2% 2%;
+        border-radius: 5px;
+        margin: 2%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media-nav {
+    display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media-responsive {
+    display: block;
+        text-align: center;
+        font-size: 2em;
+        padding-bottom: 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    section {
+        width: 90%;
+        padding: 0% 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    footer {
+      display: flex;
+        text-align: center;
+         line-height: 1.3em;
+    flex-direction: column;
+
+    }   
+}
+
+
+@media only screen and (max-width: 600px) {
+    footer div {
+      margin: 2% 5%;
+
+    }   
+}
+
+@media only screen and (max-width: 600px) {
+     #message {
+      width: 100%;
+
+    }   
+}
+
