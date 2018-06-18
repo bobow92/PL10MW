@@ -41,7 +41,7 @@ final class Application
 	}
 	
 	public function path(){
-		return 'http://localhost/blog_leslie/web/article/afficheall';
+		// return 'http://localhost/blog_leslie/web/article/afficheall';
 		
 	}
 	

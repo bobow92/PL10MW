@@ -1,9 +1,13 @@
+
+
+
+
 <?php foreach($articles as $article) : ?>
 
 
  <div class="card mb-4">
  
-            <img class="card-img-top" src="upload/<?= $article -> getImg_article() ?>" alt="Card image cap">
+            <img class="card-img-top" src="<?= $url ?>/upload/<?= $article -> getImg_article() ?>" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">
                 <?= $article -> getTitle_article() ?>
@@ -54,12 +58,4 @@
 <hr>
 <?php endforeach; ?>
 
-         
-<ul>
-  <?php foreach($authors as $author) : ?>
-    <li>
-      <a href="#" class="black"><?=$author -> getName();?></a>
-    </li>
-  <?php endforeach; ?>
-</ul>
-
+ 

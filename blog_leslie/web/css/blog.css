@@ -33,7 +33,7 @@
 .navbar, .navbar-default,.navbar-static-top{
     margin: 0;
     background: linear-gradient(to bottom right, rgb(190, 245, 140), rgb(230, 238, 210))!important;
-    color: white;
+    color: black!important;
     padding-bottom: 1%;
     padding-top: 1%;
         border: none;
@@ -48,7 +48,7 @@ a, li{
 
 li a {
 
-    color: white;
+    color: black;
 }
 
 li{
@@ -164,8 +164,9 @@ background: lightgreen!important;
   position: fixed;
   left: 1px;
   top: 50px;
-      height: 300%;
+  height: 300%;
  background: linear-gradient(to bottom right, rgb(190, 245, 140), rgb(230, 238, 210));
+ z-index: 9!important;
 
 }
 
@@ -237,7 +238,7 @@ a{
 footer{
   bottom: 0px;
     position: relative;
-    width: 100vw;
+        width: 117vw;
     left: -12%;
 }
 
@@ -310,12 +311,21 @@ li > a:hover:before {
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
  */
 
+
+
 body {
   overflow-x: hidden;
   margin-top: 50px!important;
   padding-top: 54px;
+ 
 }
 
+.nav-link{
+  color:black!important;
+}
+.navbar-brand{
+  color:black!important;
+}
 @media screen and (min-width: 450px) and (max-width: 992px){
   .col-md-4{
     display: none;
@@ -335,3 +345,10 @@ body {
   }
 }
 
+.inscription{
+      -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%!important;
+    flex: 0 0 66.666667%!important;
+    max-width: 35.666667%!important;
+  margin-right: 15%;
+}

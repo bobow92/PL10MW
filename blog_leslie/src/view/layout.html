@@ -15,7 +15,7 @@
     <!-- Custom styles for this template -->
 
     
-    <link href="css/blog.css" rel="stylesheet">
+    <link href="<?= $url ?>/css/blog.css" rel="stylesheet">
 
   </head>
 
@@ -23,14 +23,23 @@
     <?php $layout = "CONNEXION"; ?>
 
     <!-- Navigation -->
-    <div class="cookies">Nous utilisons les cookies pour nos statistiques de fréquentation. En continuant à utiliser le site, vous acceptez l’utilisation des cookies.<br> <a href="#">En savoir plus</a>
-      <button type="submit" class="accept button">Accepter</button>
-      <button type="submit" class="refuse button">Refuser</button><br>
-      <a class="poli" href="#">Politque de confidentialité</a>
-    </div>
+<?php
+  if(empty($_COOKIE)){
+    echo"
+    <div class='cookies'>
+      Nous utilisons les cookies pour nos statistiques de fréquentation.
+       En continuant à utiliser le site, vous acceptez l’utilisation des cookies.
+       <br>
+       <a href='#'>En savoir plus</a>
+      <button type='submit' class='accept button'>Accepter</button>
+      <button type='submit' class='refuse button'>Refuser</button
+        ><br>
+      <a class='poli' href='#'>Politque de confidentialité</a>
+    </div><div class='flouting'>";
+  }
 
-
-      <div class="flouting">
+?>
+      
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">LESLIE CABARRUS - NATUROPATHE</a>
@@ -40,27 +49,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto userbar">
             <li class="nav-item active">
-              <a class="nav-link" href="accueil.html">ACCUEIL
+              <a class="nav-link" href="<?= $url ?>accueil.html">ACCUEIL
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="prendre-rendez-vous.html">PRENDRE RENDEZ-VOUS</a>
+              <a class="nav-link" href="<?= $url ?>prendre-rendez-vous.html">PRENDRE RENDEZ-VOUS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.php">BLOG</a>
+              <a class="nav-link" href="<?= $url ?>index.php">BLOG</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="a-propos.html">A PROPOS</a>
+              <a class="nav-link" href="<?= $url ?>a-propos.html">A PROPOS</a>
             </li>
           </ul>
           <ul class="navbar-nav ml-auto userbar">
              
             <li class="nav-item">
-              <a class="nav-link" href="inscription.php">INSCRIPTION</a>
+              <a class="nav-link" href="<?= $url ?>author/register/inscription.html">INSCRIPTION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CONNEXION</a>
+              <a class="nav-link" href="<?= $url ?>author/connexion/inscription.html">CONNEXION</a>
             </li>
           </ul>
           
@@ -100,9 +109,10 @@
                   <ul class="list-unstyled mb-0">
                     <?php foreach($articles as $article) : ?>
                     <li>
-                      <a href="#" class="black"><?=$article -> getTitle_article();?></a>
+                      <a href="<?=$url?>article/affiche/<?= $article -> getId_article() ?>" class="black"><?=$article -> getTitle_article();?></a>
                     </li>
                     <?php endforeach; ?>
+                  </ul>
                 </div>
                  
               </div>
@@ -137,29 +147,37 @@
           </ul>
           </div>
 
-
+          <!-- ICI DOIT APPARAITRE LE CONTENU -->
 
           <?= $content ?>
+
+
+          <!-- ICI S ACHEVE LE CONTENU -->
         </div>
 
       <!-- /.row -->
-
-    </div>
+<?php
+       if(empty($_COOKIE)){
+    echo"</div>";
+  }
+ 
+?>    
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; 10MentionWeb - WF3   .  2017 - 2018</p>
+        <p class="m-0 text-center text-white"><a href="<?= $url ?>mentions-legales.html">LE NATUROPATHE EST UN PRATICIEN SANTÉ. SA CONSULTATION NE DISPENSE PAS DE CELLE D’UN DOCTEUR EN MÉDECINE.
+MENTIONS LÉGALES</a></p>
       </div>
       <!-- /.container -->
     </footer>
-  </div>
+   
     <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="js/cookies.js"></script>
+<script src="<?= $url ?>/js/cookies.js"></script>
 <!-- Fichier JS pour Cookies  -->
   </body>
 

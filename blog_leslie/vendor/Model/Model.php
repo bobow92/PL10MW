@@ -24,7 +24,7 @@ class Model
 
 public function findAll(){
     
-    $requete = "SELECT * FROM " . $this -> getTableName();
+    $requete = "SELECT * FROM " . $this -> getTableName() . " ORDER BY date_publication DESC ";
     
     $resultat = $this -> getDb() -> query($requete);
     
@@ -96,17 +96,28 @@ public function register($infos){
         $requete = 'INSERT INTO ' . $this -> getTableName() . ' (' . implode(', ', array_keys($infos)) . ') VALUES (' . ":" . implode(", :", array_keys($infos)) . ')'; 
         
         $resultat = $this -> getDb() -> prepare($requete);
+
+        if (empty($_POST) && $resultat) {
+            echo "Les champs sont vides.";
+        }
         
-        if($resultat -> execute($infos)){
-            return $this -> getDb() -> lastInsertId();
-        }
         else{
-            return false;
+
+            if($resultat -> execute($infos)){
+            
+            return true;
+           
+            }
+            
+            else{
+            
+                return false;
+            }
         }
+
     }
 
 }
-
 //public function  sortByAlphabet(){
 //    $requete = "SELECT * FROM " . $this -> getTableName() . "ORDER BY"  . $this -> getTableName()
 //}

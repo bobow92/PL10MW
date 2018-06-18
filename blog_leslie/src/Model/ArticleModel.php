@@ -18,7 +18,8 @@ class ArticleModel extends Model
     }
     
     public function getArticleByAuthor($auth){
-        $requete = "SELECT article. * FROM article LEFT JOIN author ON book.id_book WHERE author.id_author = :id_author";
+        $requete ="SELECT * FROM article LEFT JOIN author ON article.id_author = author.id_author WHERE author.id_author = article.id_author";
+        // $requete = "SELECT article. * FROM article LEFT JOIN author ON article.id_author WHERE author.id_author = :id_author";
         $resultat = $this -> getDB() -> prepare($requete);
         $resultat -> bindValue(':id_author', $auth, PDO::PARAM_STR);
         $resultat -> execute();
@@ -34,5 +35,6 @@ class ArticleModel extends Model
         }
     }
     
+
 
 }

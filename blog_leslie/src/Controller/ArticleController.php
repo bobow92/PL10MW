@@ -5,21 +5,24 @@ class ArticleController extends Controller
     public function afficheAll(){
         
         $articles = $this -> getModel() -> getAllArticles();
-        //$cc = new CategoryController;
-       // $categories = $cc -> liste();
-        
+        // $authors = $this -> getModel() -> getAllAuthors();
+         // $authors = $this -> getModel() -> getArticleByAuthor();
+ 
         $params = array(
-            'articles' => $articles
+            'articles' => $articles,
+            // 'authors' => $authors,
+       
         );
         return $this -> render('layout.html', '/../base/articles_view.html', $params);
     }
     
     public function affiche($id){
-        $article = $this -> getModel() -> getArticleById($id);
-        
+        $articles = $this -> getModel() -> getArticleById($id);
+     
         
         $params = array(
-            'article' => $article,
+          
+            'articles' => $articles,
         );
         return $this -> render('layout.html','/../base/view_articles.html', $params);
     }
@@ -36,6 +39,9 @@ class ArticleController extends Controller
     }
 
 
+    // public function afficheLastArticles(){
+    //     $articles = $this ->getModel() -> getLastArticles();
+    // }
 
     public function afficheByCategory($auth){
         $articles = $this ->getModel() -> getArticleByCategory($auth);
