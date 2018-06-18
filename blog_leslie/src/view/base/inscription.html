@@ -6,6 +6,11 @@
             <label for="InputName">Nom*</label>
             <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Prenom">
             <small  class="form-text text-muted">*Nous vous demandons cette information pour uniquement enrichir votre profil.<br>Nous ne partagerons jamais vos informations avec qui que se soit.</small>
+            <?php 
+                  if(empty($_POST['name'])){
+                      echo"<div class='alert alert-danger' role='alert'>Vous devez remplir les champs !</div>";
+                  }
+            ?>
           </div>
 
           <div class="form-group">
@@ -13,23 +18,41 @@
             <input type="text" class="form-control" id="exampleInputFirstName1" name="firstname" placeholder="Password">
             <small  class="form-text text-muted">*Nous vous demandons cette information pour uniquement enrichir votre profil.<br>Nous ne partagerons jamais vos informations avec qui que se soit.</small>
           </div>
-
+            <?php 
+                  if(empty($_POST['firstname'])){
+                      echo"<div class='alert alert-danger' role='alert'>Vous devez remplir les champs !</div>";
+                  }
+            ?>
           <div class="form-group">
             <label for="InputEmail">Adresse E-Mail*</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" placeholder="Enter email">
             <small  class="form-text text-muted">*Nous vous demandons une adresse e-mail pour vous contacter pour d'eventuelles offres, article qui pourrait vous interesser, ext..<br>*Nous ne partagerons jamais votre adresse e-mail avec qui que se soit.</small>
           </div>
+            <?php 
+                  if(empty($_POST['email'])){
+                      echo"<div class='alert alert-danger' role='alert'>Vous devez remplir les champs !</div>";
 
+                  }
+            ?>
           <div class="form-group">
             <label for="InputPassword">Mot de passe</label>
             <input type="password" class="form-control" id="exampleInputPassword1" name="password"  placeholder="Password" >
           </div>
-
+            <?php 
+                  if(empty($_POST['password']) && strlen($_POST['password'] < 8)){
+                      echo"<div class='alert alert-danger' role='alert'>Votre mot de passe doit faire un minimum de 8 caractères</div>";
+                  }
+            ?>
           <div class="form-group">
             <label for="Inputbirthdate">Date De Naissance</label>
             <input type="date" class="form-control" id="exampleInputPassword1" name="birth_date"  placeholder="Password">
           </div> 
-
+            <?php 
+          
+                  if(!is_int($_POST['birth_date'])){
+                      echo"<div class='alert alert-danger' role='alert'>Votre date de naissance doit être uniquement constitué de chiffres</div>";
+                  }
+            ?>           
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Acceptez-vous les conditions générales du site, RGPD ext,...</label>

@@ -24,7 +24,7 @@ class Model
 
 public function findAll(){
     
-    $requete = "SELECT * FROM " . $this -> getTableName() . " ORDER BY date_publication DESC ";
+    $requete = "SELECT * FROM " . $this -> getTableName();
     
     $resultat = $this -> getDb() -> query($requete);
     
@@ -97,8 +97,8 @@ public function register($infos){
         
         $resultat = $this -> getDb() -> prepare($requete);
 
-        if (empty($_POST) && $resultat) {
-            echo "Les champs sont vides.";
+        if (empty($_POST)) {
+            return false;
         }
         
         else{

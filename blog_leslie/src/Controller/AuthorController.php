@@ -22,12 +22,9 @@ class AuthorController extends Controller
     }
     
     public function register($infos){
- 
+       
 
-        $_POST['name'];
-
-                if(!empty($_POST)){
-                    $this -> getModel() -> register($infos); 
+                if($_POST){
                     $infos = array(
                     'name' => $_POST['name'],
                     'firstname' => $_POST['firstname'],
@@ -37,15 +34,16 @@ class AuthorController extends Controller
                     'hash_validation' => sha1($_POST['password']),
                     'power' =>  '0',
                 );
-                   
+                    $this -> getModel() -> register($infos);
                 return $this -> render('template.html', '/../Base/inscription.html', $infos);    
                 // Vérification des infos en Post : 
 
                 
                 }
                 else {
-               
-                return $this -> render('template.html', '/../Base/inscription.html', $infos);    
+                    $this -> getModel() -> register($infos);
+
+                    return $this -> render('template.html', '/../Base/inscription.html', $infos); 
                 }
 
        
@@ -57,22 +55,4 @@ class AuthorController extends Controller
         
                  return $this -> render('layout.html', '/../Base/admin.html', $params);
     }
-
-
-
-    public function connexion($infos){
-
-                // $infos = array(
-                //     'email' => $_POST['email'],
-                //     'password' => $_POST['password'],
-
-                // );
-                var_dump($_POST);
-
-
-                 return $this -> render('template.html', '/../Base/connexion.html', $infos);
-    }
-
-
-
 }

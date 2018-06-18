@@ -3,14 +3,16 @@ namespace Controller;
 class ArticleController extends Controller
 {
     public function afficheAll(){
-        
+       
         $articles = $this -> getModel() -> getAllArticles();
+       // var_dump($articles);
         // $authors = $this -> getModel() -> getAllAuthors();
-         // $authors = $this -> getModel() -> getArticleByAuthor();
+         // $auth = $this -> getModel() -> getArticleByAuthor();
+         // var_dump($auth);
  
         $params = array(
             'articles' => $articles,
-            // 'authors' => $authors,
+            // 'auth' => $auth,
        
         );
         return $this -> render('layout.html', '/../base/articles_view.html', $params);

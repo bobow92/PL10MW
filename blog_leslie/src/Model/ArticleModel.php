@@ -17,7 +17,7 @@ class ArticleModel extends Model
         return $this -> register($infos);
     }
     
-    public function getArticleByAuthor($auth){
+    public function getAuthorByArticle($auth){
         $requete ="SELECT * FROM article LEFT JOIN author ON article.id_author = author.id_author WHERE author.id_author = article.id_author";
         // $requete = "SELECT article. * FROM article LEFT JOIN author ON article.id_author WHERE author.id_author = :id_author";
         $resultat = $this -> getDB() -> prepare($requete);
