@@ -1,7 +1,7 @@
-
-
-
-
+<!-- 
+<pre><?= var_dump($articles) ?></pre>
+<pre><?= var_dump($auth) ?></pre>
+ -->
 <?php foreach($articles as $article) : ?>
 
 
@@ -10,7 +10,7 @@
             <img class="card-img-top" src="<?= $url ?>/upload/<?= $article -> getImg_article() ?>" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">
-                <?= $article -> getTitle_article() ?>
+                <?= $article -> getTitle_article() ?> 
               </h2>
               <p><?=$article -> getCategory();?></p>
               <p class="card-text">
