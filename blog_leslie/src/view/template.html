@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="upload/favicon.ico">
-    <title>Blog Home - Start Bootstrap Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $url ?>upload/favicon.ico">
+    <title>Leslie Cabbarrus - Naturopathe</title>
 
     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,10 +20,49 @@
   </head>
 
   <body>
-    <?php $layout = "CONNEXION"; ?>
+  <?php 
+ $connexion = "CONNEXION";
+ $inscription = "INSCRIPTION";
+ $urlconnect = $url."author/register/inscription.html";
+ $urldisconnect = $url."author/connexion/connexion.html";
+
+  if(!empty($_SESSION)){
+   
+       $inscription = $_SESSION['firstname']." ".$_SESSION['name'];
+       $connexion = "DECONNEXION";
+       $urlconnect = $url."author/affiche/".$donnee['id_author'];
+       $urldisconnect = $url."author/deconnexion";
+       
+  
+
+      }
+  else{
+        $inscription = "INSCRIPTION";
+      }
+ ?> 
+
+
 
     <!-- Navigation -->
-   
+}
+<?php
+  if(empty($_COOKIE)){
+    echo"
+    <div class='cookies'>
+      Nous utilisons les cookies pour nos statistiques de fréquentation.
+       En continuant à utiliser le site, vous acceptez l’utilisation des cookies.
+       <br>
+       <a href='#'>En savoir plus</a>
+      <button type='submit' class='accept button'>Accepter</button>
+      <button type='submit' class='refuse button'>Refuser</button
+        ><br>
+      <a class='poli' href='#'>Politque de confidentialité</a>
+    </div>
+    <div class='flouting'>";
+  }
+
+?>
+      
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
         <a class="navbar-brand" href="#">LESLIE CABARRUS - NATUROPATHE</a>
@@ -50,10 +89,10 @@
           <ul class="navbar-nav ml-auto userbar">
              
             <li class="nav-item">
-              <a class="nav-link" href="<?= $url ?>author/register/inscription.html">INSCRIPTION</a>
+              <a class="nav-link" href="<?= $urlconnect ?>"><?= $inscription ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= $url ?>author/connexion/connexion.html">CONNEXION</a>
+              <a class="nav-link" href="<?= $urldisconnect ?>"><?= $connexion ?></a>
             </li>
           </ul>
           
@@ -61,7 +100,7 @@
 
       </div>
     </nav>
-
+ 
  
 
           <!-- ICI DOIT APPARAITRE LE CONTENU -->
@@ -78,12 +117,13 @@
     <!-- /.container -->
 
     <!-- Footer -->
+
     <footer style="left: 0%!important;" class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white"><a href="<?= $url ?>mentions-legales.html">LE NATUROPATHE EST UN PRATICIEN SANTÉ. SA CONSULTATION NE DISPENSE PAS DE CELLE D’UN DOCTEUR EN MÉDECINE.
-MENTIONS LÉGALES</a></p>
+        <p class="m-0 text-center text-white">LE NATUROPATHE EST UN PRATICIEN SANTÉ.<br>SA CONSULTATION NE DISPENSE PAS DE CELLE D’UN DOCTEUR EN MÉDECINE.
+        <a href="<?= $url ?>mentions-legales.html">MENTIONS LÉGALES</a>
+        </p>
       </div>
-      <!-- /.container -->
     </footer>
   
     <!-- Bootstrap core JavaScript -->

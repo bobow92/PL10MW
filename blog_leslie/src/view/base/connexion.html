@@ -2,6 +2,19 @@
 <div class="col-md-8 inscription">
 <form method="post" class="col-md-8">
 		  <div class="form-group">
+        <?php 
+ 
+if(isset($erreur1)){
+  echo $erreur1;
+}
+if(isset($erreur2)){
+  echo $erreur2;
+}
+if(isset($erreur3)){
+  echo $erreur3;
+}
+?>
+ 
             <label for="exampleInputEmail1">Adresse E-Mail*</label>
             <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small  class="form-text text-muted">*Nous vous demandons une adresse e-mail pour vous contacter pour d'eventuelles offres, article qui pourrait vous interesser, ext..<br>*Nous ne partagerons jamais votre adresse e-mail avec qui que se soit.</small>
@@ -13,7 +26,7 @@
             <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
           </div>
           
-          <input type="submit" class="btn btn-primary" value="Connexion"></button>
+          <input type="submit" class="btn btn-primary" value="Connexion" name="connexionform"></button>
 
           <button type="submit" class="btn btn-primary">Mot de passe oublié ?</button>
           <button type="submit" class="btn btn-primary">Adresse Mail oublié ?</button>

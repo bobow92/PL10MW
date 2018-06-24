@@ -9,6 +9,7 @@ class ArticleController extends Controller
         $params = array(
  
             'donnees' => $donnees,
+            
         );
 
      
@@ -17,23 +18,23 @@ class ArticleController extends Controller
     }
     
     public function affiche($id){
-        $articles = $this -> getModel() -> getArticleById($id);
+        $donnees = $this -> getModel() -> getArticleById($id);
    
         $params = array(
           
-            'articles' => $articles,
+            'donnees' => $donnees,
         );
 
         return $this -> render('template.html','/../base/view_articles.html', $params);
     }
     
     public function afficheByAuthor($auth){
-        $articles = $this ->getModel() -> getArticleByAuthor();
+        $donnees = $this ->getModel() -> getArticleByAuthor();
         
         
         $params = array(
             'title' => 'Category',
-            'articles' => $articles,
+            'donnees' => $donnees,
         );
         
         return $this -> render('layout.html','/../base/profil.html', $params);
