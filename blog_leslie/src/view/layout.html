@@ -20,7 +20,7 @@
   </head>
 
   <body>
-    <?php $layout = "CONNEXION"; ?>
+ 
 
     <!-- Navigation -->
 <?php
@@ -69,7 +69,7 @@
               <a class="nav-link" href="<?= $url ?>author/register/inscription.html">INSCRIPTION</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= $url ?>author/connexion/inscription.html">CONNEXION</a>
+              <a class="nav-link" href="<?= $url ?>author/connexion/connexion.html">CONNEXION</a>
             </li>
           </ul>
           
@@ -102,14 +102,14 @@
 
           <!-- Categories Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Derniers Articles</h5>
+            <h5 class="card-header">Categorie</h5>
             <div class="card-body">
               <div class="row">
                 <div class="col-lg-12">
                   <ul class="list-unstyled mb-0">
-                    <?php foreach($articles as $article) : ?>
+                    <?php foreach($donnees as $donnee) : ?>
                     <li>
-                      <a href="<?=$url?>article/affiche/<?= $article -> getId_article() ?>" class="black"><?=$article -> getTitle_article();?></a>
+                      <a href="<?=$url?>article/afficheByCategory/<?= $donnee['category'] ?>" class="black"><?=$donnee['category']?></a>
                     </li>
                     <?php endforeach; ?>
                   </ul>
@@ -167,12 +167,12 @@
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
-        <p class="m-0 text-center text-white"><a href="<?= $url ?>mentions-legales.html">LE NATUROPATHE EST UN PRATICIEN SANTÉ. SA CONSULTATION NE DISPENSE PAS DE CELLE D’UN DOCTEUR EN MÉDECINE.
-MENTIONS LÉGALES</a></p>
+        <p class="m-0 text-center text-white">LE NATUROPATHE EST UN PRATICIEN SANTÉ.<br>SA CONSULTATION NE DISPENSE PAS DE CELLE D’UN DOCTEUR EN MÉDECINE.
+        <a href="<?= $url ?>mentions-legales.html">MENTIONS LÉGALES</a>
+        </p>
       </div>
-      <!-- /.container -->
     </footer>
-   
+   <!-- /.container -->
     <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

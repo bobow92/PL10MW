@@ -236,10 +236,12 @@ a{
   float: right;
 }
 footer{
+  text-align: left;
+  
   bottom: 0px;
     position: relative;
         width: 117vw;
-    left: -12%;
+    left: 28%;
 }
 
 
@@ -351,4 +353,5 @@ body {
     flex: 0 0 66.666667%!important;
     max-width: 35.666667%!important;
   margin-right: 15%;
+  margin-bottom: 25%!important;
 }

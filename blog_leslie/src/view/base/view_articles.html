@@ -1,48 +1,91 @@
+  <?php foreach($articles as $article) : ?>
 
-<?php
-if($articles){
-  echo "il existe putain";
-}
-else{
-  echo "nope.. sry";
-}
-?>
-
-<?php
-if( 1 === 1){
-  echo "il existe putain";
-}
-else{
-  echo "nope.. sry";
-}
-?>
-<?php var_dump($_COOKIE); ?>
-<?php var_dump($_POST); ?>
-
-
-
-
- <div class="card mb-4">
-            <div class="card-body">
-   
-            </div>    
-
-
+<div class="card mb-4">
+ 
+            <img class="card-img-top" src="<?= $url ?>upload/<?= $article['img_article'] ?>" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">
-                
+                <?= $article['title_article'] ?> 
               </h2>
-                
+              <p><?=$article['category'] ?><p>
+              <p class="card-text">
+              <?=$article['content']?>
+              
+                   
+               </p>
                
             </div>
             
             <div class="card-footer text-muted">
-            
-              <a href="#"></a>
-              
-          </div>
-</div>  <hr>
-<?php foreach($articles as $article) : ?>
-<?= $article -> getid_article(); ?>
-<?php endforeach; ?>
+              Publié<?php
 
+               $datepost = $article['date_publication'];
+           
+               $dd = substr($datepost, -11, -9);
+               $dm = substr($datepost, -14, -12);
+               $dy = substr($datepost, -27, 4);
+               $dh = substr($datepost, -9, 3);
+               $dmi = substr($datepost, -5, 2);
+
+               echo " à ".$dh."h".$dmi." le ".$dd."/".$dm."/".$dy;
+
+
+
+
+               ?> Par
+              <a style="color: black!important;" href="<?= $url ?>author/affiche/<?= $article['id_author']?>"><?= $article['firstname']?> <?= $article['name']?></a>
+              
+            </div>
+
+
+</div>
+
+
+<?php $y = 1; 
+$y++;
+  
+?>
+    <?php
+
+    if($y < 2)
+    echo'test view_articles';
+    foreach($articles as $article) :
+  
+
+  ?>
+
+    <div class="card mb-4">
+                  <div class="card-body">
+                  <p><p>
+                  <p class="card-text">
+             
+                  <?= $article['content_comment'] ?>
+                  
+                   </p>
+                   
+                </div>
+                 <div class="card-footer text-muted">
+                  Publié<?php
+
+                   $datepost = $article['date_publication_comment'];
+               
+                   $dd = substr($datepost, -11, -9);
+                   $dm = substr($datepost, -14, -12);
+                   $dy = substr($datepost, -27, 4);
+                   $dh = substr($datepost, -9, 3);
+                   $dmi = substr($datepost, -5, 2);
+
+                  
+                   echo " à ".$dh."h".$dmi." le ".$dd."/".$dm."/".$dy;
+
+
+
+                   ?>     par <a style="color: black!important;" href="<?= $url ?>author/affiche/<?= $article['id_author']?>"><?= $article['firstname']?> <?= $article['name']?></a>
+                  
+                </div>
+
+    </div>
+     
+     <?php endforeach; ?>
+
+<?php endforeach; ?>

@@ -4,36 +4,35 @@ class ArticleController extends Controller
 {
     public function afficheAll(){
        
-        $articles = $this -> getModel() -> getAllArticles();
-       // var_dump($articles);
-        // $authors = $this -> getModel() -> getAllAuthors();
-         // $auth = $this -> getModel() -> getArticleByAuthor();
-         // var_dump($auth);
- 
+        $donnees = $this -> getModel() -> getAllArticles();
+
         $params = array(
-            'articles' => $articles,
-            // 'auth' => $auth,
-       
+ 
+            'donnees' => $donnees,
         );
+
+     
+
         return $this -> render('layout.html', '/../base/articles_view.html', $params);
     }
     
     public function affiche($id){
         $articles = $this -> getModel() -> getArticleById($id);
-     
-        
+   
         $params = array(
           
             'articles' => $articles,
         );
-        return $this -> render('layout.html','/../base/view_articles.html', $params);
+
+        return $this -> render('template.html','/../base/view_articles.html', $params);
     }
     
     public function afficheByAuthor($auth){
-        $articles = $this ->getModel() -> getArticleByAuthor($auth);
+        $articles = $this ->getModel() -> getArticleByAuthor();
         
         
         $params = array(
+            'title' => 'Category',
             'articles' => $articles,
         );
         
@@ -41,16 +40,13 @@ class ArticleController extends Controller
     }
 
 
-    // public function afficheLastArticles(){
-    //     $articles = $this ->getModel() -> getLastArticles();
-    // }
-
-    public function afficheByCategory($auth){
-        $articles = $this ->getModel() -> getArticleByCategory($auth);
+ 
+    public function afficheByCategory($category){
+        $donnees = $this ->getModel() -> getArticleByCategory($category);
         
         
         $params = array(
-            'articles' => $articles,
+            'donnees' => $donnees,
         );
         
         return $this -> render('layout.html','/../base/category.html', $params);
