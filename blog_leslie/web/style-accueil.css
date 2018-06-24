@@ -19,53 +19,44 @@ body {
     margin: 0 auto;
 }
 
-
-
-.header1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1% 0.8%;
- }
-
-.navbar-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 1.2em;
-  
-  }
-
-.social-media-navbar {
-    font-size: 1.5em;
-}
-
-
 nav {
    background: linear-gradient(to bottom right, rgb(190, 210, 140), rgb(230, 238, 210));
+    height: 70px;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    margin-bottom: 0%;
-    
+    align-items: baseline;
+     padding: 2% 0%;
 }
 nav li {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    padding: 2%;
+    font-weight: 600;
+    margin: 0% 2%;
     text-transform: uppercase;
-    justify-content: center;
-    text-align: center;
     font-size: .7em;
-    color: rgb(31,70,40);
-    list-style-type: none;
+    color: rgb(31, 70, 40);
     
 }
 
 
 
 
+.social-media-nav {
+    font-size: 1.4em;
+}
+
+.responsive-title {
+    display: none;
+}
+
+.social-media-responsive {
+       display: none; }
+
+.social-media-responsive2 {
+    display: none;
+}
 
 .grid {
     margin-bottom: 10%;
@@ -93,21 +84,12 @@ h3 {
     font-weight: 700;
 }
 
-h5 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    font-size: 1.2em;
-     align-items: center;
-    display: flex;
-    align-content: center;
-}
-
 /* typographie */
 
 p {
     font-family: 'Libre Baskerville', serif;
     font-size: 1em;
-    line-height: 1.8em;
+    line-height: 2em;
     color: #777;
 
 }
@@ -478,14 +460,6 @@ a:visited {
 }
 
 @media only screen and (max-width: 600px) {
-    .header1 {
-        width: 95%;
-        margin: auto;
-    }
-}
-
-
-@media only screen and (max-width: 600px) {
     nav {
         height: auto;
     }
@@ -560,7 +534,7 @@ a:visited {
 
 @media only screen and (max-width: 600px) {
     h3.naturopathie {
-       display: block;
+       display: none;
 
     }
 }
@@ -586,6 +560,16 @@ a:visited {
 /* nav respsonsive */
 
 
+@media only screen and (max-width: 600px) {
+    .responsive-title {
+        display: block;
+        text-align: center;
+        font-size: 1.3em;
+        padding: 2% 0%;
+        color: rgb(31, 70, 40);
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     nav ul {
@@ -609,6 +593,23 @@ a:visited {
         margin: 2%;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .social-media-nav {
+    display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .social-media-responsive2 {
+    display: block;
+    padding: 40% 0%;
+        font-size: 3em;
+    }
+}
+
+
+
 
 
 @media only screen and (max-width: 600px) {
