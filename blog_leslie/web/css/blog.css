@@ -246,7 +246,7 @@ footer{
 
 
 .profiling{
-  opacity: 0;
+  opacity: 1;
   z-index: 1000;
   position: fixed;
     right: 1px;

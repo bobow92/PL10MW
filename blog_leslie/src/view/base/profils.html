@@ -1,9 +1,12 @@
-         
+ 
+
 <ul>
-	<?php foreach($authors as $author) : ?>
+	<?php foreach($donnees as $donnee) : ?>
 		<li>
-			<a href="#" class="black"><?=$author -> getName();?></a>
+			<a href="#" class="black"><?=$donnee['name']." ".$donnee['firstname']?></a>
 		</li>
 	<?php endforeach; ?>
 </ul>
+
+<?php
 

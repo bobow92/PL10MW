@@ -1,15 +1,18 @@
-  <?php foreach($articles as $article) : ?>
-
+<!--    <?= "<pre>" ?>
+ <?= var_dump($donnees) ?>
+ <?= "</pre>" ?> -->
+  <?php foreach($donnees as $donnee) : ?>
+ 
 <div class="card mb-4">
  
-            <img class="card-img-top" src="<?= $url ?>upload/<?= $article['img_article'] ?>" alt="Card image cap">
+            <img class="card-img-top" src="<?= $url ?>upload/<?= $donnee['img_article'] ?>" alt="Card image cap">
             <div class="card-body">
               <h2 class="card-title">
-                <?= $article['title_article'] ?> 
+                <?= $donnee['title_article'] ?> 
               </h2>
-              <p><?=$article['category'] ?><p>
+              <p><?=$donnee['category'] ?><p>
               <p class="card-text">
-              <?=$article['content']?>
+              <?=$donnee['content']?>
               
                    
                </p>
@@ -19,7 +22,7 @@
             <div class="card-footer text-muted">
               Publié<?php
 
-               $datepost = $article['date_publication'];
+               $datepost = $donnee['date_publication'];
            
                $dd = substr($datepost, -11, -9);
                $dm = substr($datepost, -14, -12);
@@ -33,33 +36,25 @@
 
 
                ?> Par
-              <a style="color: black!important;" href="<?= $url ?>author/affiche/<?= $article['id_author']?>"><?= $article['firstname']?> <?= $article['name']?></a>
+              <a style="color: black!important;" href="<?= $url ?>author/affiche/<?= $donnee['id_author']?>"><?= $donnee['firstname']?> <?= $donnee['name']?></a>
               
             </div>
 
 
 </div>
 
-
-<?php $y = 1; 
-$y++;
+ 
   
-?>
-    <?php
-
-    if($y < 2)
-    echo'test view_articles';
-    foreach($articles as $article) :
-  
-
-  ?>
+ <h2 class="card-title">Commentaire :</h2>
 
     <div class="card mb-4">
+
                   <div class="card-body">
+                     
                   <p><p>
                   <p class="card-text">
              
-                  <?= $article['content_comment'] ?>
+                  <?= $donnee['content_comment'] ?>
                   
                    </p>
                    
@@ -67,7 +62,7 @@ $y++;
                  <div class="card-footer text-muted">
                   Publié<?php
 
-                   $datepost = $article['date_publication_comment'];
+                   $datepost = $donnee['date_publication_comment'];
                
                    $dd = substr($datepost, -11, -9);
                    $dm = substr($datepost, -14, -12);
@@ -80,12 +75,12 @@ $y++;
 
 
 
-                   ?>     par <a style="color: black!important;" href="<?= $url ?>author/affiche/<?= $article['id_author']?>"><?= $article['firstname']?> <?= $article['name']?></a>
+                   ?>     par <a style="color: black!important;" href="<?= $url ?>author/affiche/<?= $donnee['id_author']?>"><?= $donnee['firstname']?> <?= $donnee['name']?></a>
                   
                 </div>
 
     </div>
      
-     <?php endforeach; ?>
+ 
 
 <?php endforeach; ?>

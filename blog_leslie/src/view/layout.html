@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="upload/favicon.ico">
-    <title>Blog Home - Start Bootstrap Template</title>
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $url ?>upload/favicon.ico">
+    <title>Leslie Cabbarrus - Naturopathe</title>
 
     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,9 +20,31 @@
   </head>
 
   <body>
- 
+  <?php 
+ $connexion = "CONNEXION";
+ $inscription = "INSCRIPTION";
+ $urlconnect = $url."author/register/inscription.html";
+ $urldisconnect = $url."author/connexion/connexion.html";
+
+  if(!empty($_SESSION)){
+   
+       $inscription = $_SESSION['firstname']." ".$_SESSION['name'];
+       $connexion = "DECONNEXION";
+       $urlconnect = $url."author/affiche/".$donnee['id_author'];
+       $urldisconnect = $url."author/deconnexion";
+       
+  
+
+      }
+  else{
+        $inscription = "INSCRIPTION";
+      }
+ ?> 
+
+
 
     <!-- Navigation -->
+}
 <?php
   if(empty($_COOKIE)){
     echo"
@@ -35,7 +57,8 @@
       <button type='submit' class='refuse button'>Refuser</button
         ><br>
       <a class='poli' href='#'>Politque de confidentialité</a>
-    </div><div class='flouting'>";
+    </div>
+    <div class='flouting'>";
   }
 
 ?>
@@ -66,10 +89,10 @@
           <ul class="navbar-nav ml-auto userbar">
              
             <li class="nav-item">
-              <a class="nav-link" href="<?= $url ?>author/register/inscription.html">INSCRIPTION</a>
+              <a class="nav-link" href="<?= $urlconnect ?>"><?= $inscription ?></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?= $url ?>author/connexion/connexion.html">CONNEXION</a>
+              <a class="nav-link" href="<?= $urldisconnect ?>"><?= $connexion ?></a>
             </li>
           </ul>
           
@@ -119,7 +142,7 @@
             </div>
           </div>
 
-          <!-- Side Widget -->
+          <!-- Newsletter Widget -->
           <div class="card my-4">
             <h5 class="card-header">Newsletter</h5>
             <div class="card-body">
@@ -135,35 +158,39 @@
           </div>
 
         </div>
-        <!-- Blog Entries Column -->
+    
         <div class="col-md-8">
-          <div class="profiling">
-                   <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="">Compte</a></li>
-            <li class="nav-item"><a href="">Message</a></li>
-            <li class="nav-item"><a href="">News</a></li>
-            <li class="nav-item"><a href="">Notification</a></li>
-            <li class="nav-item"><a href="">Deconnexion</a></li>
-          </ul>
-          </div>
-
           <!-- ICI DOIT APPARAITRE LE CONTENU -->
-
+          <?php
+          if(isset($_SESSION['power']) && $_SESSION['power'] == 1){
+          echo"<div class='profiling'>
+              <ul class='navbar-nav ml-auto'>
+                  <li class='nav-item'><a href=''>Compte</a></li>
+                  <li class='nav-item'><a href=''>Message</a></li>
+                  <li class='nav-item'><a href=''>News</a></li>
+                  <li class='nav-item'><a href=''>Notification</a></li>
+                  <li class='nav-item'><a href=''>Deconnexion</a></li>
+              </ul>
+          </div>";
+          }
+          ?>
+         
           <?= $content ?>
 
 
-          <!-- ICI S ACHEVE LE CONTENU -->
-        </div>
+          
+       
 
-      <!-- /.row -->
+      
 <?php
        if(empty($_COOKIE)){
     echo"</div>";
   }
  
 ?>    
-    <!-- /.container -->
-
+   
+    <!-- ICI S ACHEVE LE CONTENU -->
+    </div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
@@ -172,7 +199,6 @@
         </p>
       </div>
     </footer>
-   <!-- /.container -->
     <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

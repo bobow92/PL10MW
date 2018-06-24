@@ -1,28 +1,32 @@
  
-
-
+<?php foreach($donnees as $donnee) : ?>
  <div class="card mb-4">
+ 
+            
             <div class="card-body">
+              <h2 class="card-title"><?=$donnee['firstname'] ?>  <?= $donnee['name'] ?></h2>
+              <p></p>
+              <p class="card-text"><?=$donnee['email'] ?></p>
           
-            </div>    
-
-
-            <div class="card-body">
-              <h2 class="card-title">
-               
-              </h2>
-                
+              
                
             </div>
             
             <div class="card-footer text-muted">
-             
-                 Par
-              <a href="#"></a>
+              Date de naissance <?= $donnee['birth_date'] ?>  
+               
               
-          </div>
-</div>  
+            </div>
+            <a href="<?= $url ?>article/affiche/<?= $donnee['id_article'] ?>">
+              <img style="width: 200px!important; height: 200px!important;" src="<?= $url ?>upload/<?= $donnee['img_article']?>" alt="..." class="img-thumbnail">
+            </a>
+          </div>  
 <hr>
- 
+
+
+  <?php endforeach; ?>
+
+
+
  
 
