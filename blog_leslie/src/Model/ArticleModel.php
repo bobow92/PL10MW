@@ -19,7 +19,7 @@ class ArticleModel extends Model
     }
     
     public function getArticleById($id){
-       $requete = "SELECT * from article, author, comment where article.id_author = author.id_author and comment.id_article = article.id_article and article.id_article = ". $id;
+       $requete = "SELECT * FROM article, author, commentaire  WHERE article.id_author = author.id_author and article.id_article = commentaire.id_article AND article.id_article = ". $id;
        $resultat = $this -> getDb() -> query($requete);
 
        $donnees = $resultat -> fetchAll(PDO::FETCH_ASSOC);
@@ -53,8 +53,17 @@ class ArticleModel extends Model
         return $this -> delete($id);
     }
 
-    public function registerArticle($infos){
-        return $this -> register($infos);
+    public function registerArticle(){
+        $requete = "INSERT INTO article (title_article, content, category, date_publication, img_article, id_author) VALUES (:title_article, :content, :category, :date_publication, :hash_validation, :img_article, :id_author)";
+        $resultat = $this -> getDb() -> prepare($requete);
+        $resultat -> execute(array(
+            ':title_article'=>$_POST['title_article'],
+            ':content'=>$_POST['content'],
+            ':category'=>$_POST['category'],
+            ':date_publication'=> now(),
+            ':img_article'=>$FILE['img_article'],
+            ':id_author'=>$_SESSION['id_author'],
+            ));
     }
     
  

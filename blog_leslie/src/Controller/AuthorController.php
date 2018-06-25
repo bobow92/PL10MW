@@ -57,29 +57,29 @@ class AuthorController extends Controller
                                 
                                     if ($mdp == $mdp2) {
 
-                                        $erreur4 = '<p style="color: green;!important"> Votre compte a bien été crée.</p>';
+                                        $erreur4 = '<p><strong style="color: red;!important">Votre compte a bien été crée.</strong></p>';
                                         
                                         $authors = $this -> getModel() -> registerAuthor();
                                     }
                                     else{
-                                        $erreur3 = '<p style="color: red!important;">vos mot de passe ne correspondent pas</p>';
+                                        $erreur3 = '<p><strong style="color: red;!important">vos mot de passe ne correspondent pas</strong></p>';
                                     }
                                 }   
                             }
                             else{
-                                $erreur2 = '<p style="color: red;!important">vos adresses email ne correspondent pas.</p>';
+                                $erreur2 = '<p><strong style="color: red;!important">vos adresses email ne correspondent pas.</strong></p>';
                             }
                                
                         }
                         else{
-                            $erreur1 = '<p style="color: red;!important">votre prénom ou nom dépasse 255 caractères.</p>';
+                            $erreur1 = '<p><strong style="color: red;!important">votre prénom ou nom dépasse 255 caractères.</strong></p>';
                         }
                     }
 
                 
                 }
                 else{
-                    $erreur0 = '<p style="color: red;!important">Le formulaire doit être rempli entièrement.</p>';
+                    $erreur0 = '<p><strong style="color: blue;!important">Le formulaire doit être rempli entièrement.</strong></p>';
                 }
                 $params = array(
                                         'title' => 'inscription',
@@ -104,7 +104,7 @@ class AuthorController extends Controller
                 $email = htmlspecialchars($_POST['email']);
                 $password = sha1($_POST['password']);
                 if (!empty($email) && !empty($password)) {
-                    echo "GG";
+                     
                       $connexion = $this -> getModel() -> connexion();
 
                     

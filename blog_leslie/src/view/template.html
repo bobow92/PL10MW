@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr ">
+<html lang="fr">
 
   <head>
 
@@ -30,7 +30,7 @@
    
        $inscription = $_SESSION['firstname']." ".$_SESSION['name'];
        $connexion = "DECONNEXION";
-       $urlconnect = $url."author/affiche/".$donnee['id_author'];
+       $urlconnect = $url."author/affiche/".$_SESSION['id_author'];
        $urldisconnect = $url."author/deconnexion";
        
   

@@ -8,7 +8,7 @@ class AuthorModel extends Model
         return $this -> findAll();
     }
     public function getAuthorById($id){
-        $requete = "SELECT * from article, author, comment where author.id_author = article.id_author and comment.id_article = article.id_article and author.id_author = ". $id;
+        $requete = "SELECT DISTINCT * from article, author, commentaire where author.id_author = article.id_author and commentaire.id_article = article.id_article and author.id_author = ". $id;
         $resultat = $this -> getDb() -> query($requete);
 
         $donnees = $resultat -> fetchAll(PDO::FETCH_ASSOC);  
@@ -59,7 +59,7 @@ class AuthorModel extends Model
                     $_SESSION['name'] = $result['name'];
                     $_SESSION['firstname'] = $result['firstname'];
                     $_SESSION['power'] = $result['power'];
-                    header("Location: ".$url."../../author/affiche/".$_SESSION['id_author']);
+                    header("Location: ".$url."../../index.php");
                     }
                     else{
                         $erreur3 = '<p style="color: red;!important">Mauvais Email ou Mot de passe</p>';

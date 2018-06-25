@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr ">
+<html lang="fr">
 
   <head>
 
@@ -30,7 +30,7 @@
    
        $inscription = $_SESSION['firstname']." ".$_SESSION['name'];
        $connexion = "DECONNEXION";
-       $urlconnect = $url."author/affiche/".$donnee['id_author'];
+       $urlconnect = $url."author/affiche/".$_SESSION['id_author'];
        $urldisconnect = $url."author/deconnexion";
        
   
@@ -130,10 +130,12 @@
               <div class="row">
                 <div class="col-lg-12">
                   <ul class="list-unstyled mb-0">
+                    <?php $y = 1; ?>
                     <?php foreach($donnees as $donnee) : ?>
                     <li>
-                      <a href="<?=$url?>article/afficheByCategory/<?= $donnee['category'] ?>" class="black"><?=$donnee['category']?></a>
+                      <a href="<?=$url?>article/afficheByCategory/<?= $donnee['category'] ?>" class="black"><?php $y++; ?><?=$donnee['category']?></a>
                     </li>
+                    
                     <?php endforeach; ?>
                   </ul>
                 </div>
@@ -148,12 +150,12 @@
             <div class="card-body">
               <form method="POST">
              <div class="input-group">
-                <input type="mail" class="form-control" name="newsletter" placeholder="abcde@12345.fr">
+                <input type="email" class="form-control" name="newsletter" placeholder="leslie.cabarrus@gmail.com">
                 <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button">Envoyer</button>
                 </span>
-              </form>
               </div>
+              </form>
             </div>
           </div>
 
@@ -165,7 +167,7 @@
           if(isset($_SESSION['power']) && $_SESSION['power'] == 1){
           echo"<div class='profiling'>
               <ul class='navbar-nav ml-auto'>
-                  <li class='nav-item'><a href=''>Compte</a></li>
+                  <li class='nav-item'><a href='article/createArticle'>Ajouter un article</a></li>
                   <li class='nav-item'><a href=''>Message</a></li>
                   <li class='nav-item'><a href=''>News</a></li>
                   <li class='nav-item'><a href=''>Notification</a></li>
@@ -191,6 +193,8 @@
    
     <!-- ICI S ACHEVE LE CONTENU -->
     </div>
+  </div>
+</div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
