@@ -1,0 +1,59 @@
+
+<div class="col-md-8 inscription">
+<form method="post">
+<link rel="stylesheet" type="text/css" href="blog.css">
+<?php 
+ 
+if(isset($erreur1)){
+  echo $erreur1;
+}
+if(isset($erreur2)){
+  echo $erreur2;
+}
+if(isset($erreur3)){
+  echo $erreur3;
+}
+if(isset($erreur4)){
+  echo $erreur4;
+}
+if(isset($erreur0)){
+  echo $erreur0;
+}
+?> 
+          <div class="form-group">
+            <label for="InputName">Titre de l'article<br><hr></label>
+            <input type="text" class="form-control" id="exampleInputName1" name="title_article">
+            
+
+          </div>
+
+          <div class="form-group">
+            <label for="InputFirstName">Contenu de l'article<br><hr></label>
+            <input style="height: 300px;" type="text" class="form-control" id="exampleInputFirstName1" name="content">
+             
+          </div>
+
+          <div class="form-group">
+            <label for="InputEmail">Categorie<br><hr><label>
+              <select class="form-control" name="category">
+                <option value="Categorie1">Categorie1</option>
+                <option value="Categorie2">Categorie2</option>
+                <option value="Categorie3">Categorie3</option>
+                <option value="Categorie4">Categorie4</option>
+                <option value="Categorie4">Categorie5</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="InputEmail">Image d'article<br><hr><label>
+            <input type="file" class="form-control" id="exampleInputEmail1" name="img_article">
+            
+          </div>
+          
+
+          
+         
+           <input type="submit" name="formarticle" class="btn btn-primary">
+</form>
+</div>
+
