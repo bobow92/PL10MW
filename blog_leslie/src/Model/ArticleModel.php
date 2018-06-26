@@ -53,17 +53,35 @@ class ArticleModel extends Model
         return $this -> delete($id);
     }
 
+    public function registerCommentaire($id){
+        $requete = "INSERT INTO commentaire (content_comment, date_publication_comment, id_article, id_author) VALUES (:content_comment, now(), :id_article, :id_author)";
+        $resultat = $this -> getDb() -> prepare($requete);
+        
+        if(isset($_POST['content_comment'])){
+        $resultat -> execute(array(
+            ':content_comment'=>$_POST['content_comment'],  
+            ':id_author'=>$_SESSION['id_author'],
+            ':id_article'=>$id,
+            ));
+
+        }
+        else{
+            return false;
+        }
+    }
+
     public function registerArticle(){
-        $requete = "INSERT INTO article (title_article, content, category, date_publication, img_article, id_author) VALUES (:title_article, :content, :category, :date_publication, :hash_validation, :img_article, :id_author)";
+        $requete = "INSERT INTO article (title_article, content, category, date_publication, img_article, id_author) VALUES (:title_article, :content, :category, now(), :img_article, :id_author)";
         $resultat = $this -> getDb() -> prepare($requete);
         $resultat -> execute(array(
             ':title_article'=>$_POST['title_article'],
             ':content'=>$_POST['content'],
-            ':category'=>$_POST['category'],
-            ':date_publication'=> now(),
-            ':img_article'=>$FILE['img_article'],
+            ':category'=>$_POST['category'], 
+            ':img_article'=>$_FILES['img_article']['name'],
             ':id_author'=>$_SESSION['id_author'],
             ));
+
+
     }
     
  

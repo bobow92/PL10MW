@@ -250,7 +250,7 @@ footer{
   z-index: 1000;
   position: fixed;
     right: 1px;
-   top: 1px;
+   top: 126px;
   color: black!important;
   background-color: #9FFF9E;
   padding:15px;
@@ -266,7 +266,14 @@ color: black!important;
   text-decoration: none!important;
 }
 
-
+.inscription{
+      -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%!important;
+    flex: 0 0 66.666667%!important;
+    max-width: 60.666667%!important;
+ 
+  margin-bottom: 25%!important;
+}
 
 .card-header{
       background-color: mintcream!important;
@@ -335,6 +342,14 @@ body {
   .col-md-8{
     margin-left: 0px;
   }
+
+  .inscription{
+      -webkit-box-flex: 0;
+    -ms-flex: 0 0 90.666667%!important;
+    flex: 0 0 90.666667%!important;
+    max-width: 90.666667%!important;
+  margin-bottom: 25%!important;
+}
 }
 
 
@@ -347,11 +362,3 @@ body {
   }
 }
 
-.inscription{
-      -webkit-box-flex: 0;
-    -ms-flex: 0 0 66.666667%!important;
-    flex: 0 0 66.666667%!important;
-    max-width: 35.666667%!important;
-  margin-right: 15%;
-  margin-bottom: 25%!important;
-}
