@@ -1,4 +1,4 @@
-/*
+/* couleurs : 
 1 Gardenia #f1e8df
 2 Cherry Blossom #f7cfe1
 3 Yellow Iris #eee78e
@@ -9,58 +9,70 @@
 8 Astral Aura #363151
 */
 
-/*
+/* typographie :
 font-family: 'Montserrat', sans-serif;
 font-family: 'Libre Baskerville', serif;
 */
 
 body {
     width: 980px;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1% 1%;
+ }
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-content: center;
+}
+
+.social-media-navbar {
+    font-size: 1.5em;
+}
+
+
+/* navigation menu */
 nav {
    background: linear-gradient(to bottom right, rgb(190, 210, 140), rgb(230, 238, 210));
-    height: 70px;
+        padding: 2% 0%;
+
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    align-items: baseline;
-     padding: 2% 0%;
+    margin-bottom: 0%;
+    
 }
 nav li {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    margin: 0% 2%;
+    font-weight: 500;
+    padding: 0% 2%;
+    margin-bottom: 0%;
     text-transform: uppercase;
+    justify-content: center;
+    text-align: center;
     font-size: .7em;
-    color: rgb(31, 70, 40);
-    
+    color: rgb(31,70,40);
+    list-style-type: none;
 }
 
 
 
 
-.social-media-nav {
-    font-size: 1.4em;
-}
+/* main content CSS grid container */
 
-.responsive-title {
-    display: none;
-}
 
-.social-media-responsive {
-       display: none; }
-
-.social-media-responsive2 {
-    display: none;
-}
-
-.grid {
-    margin-bottom: 10%;
-}
 
 /* typographie */
 
@@ -85,14 +97,27 @@ h3 {
 }
 
 /* typographie */
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+     align-items: center;
+    display: flex;
+    align-content: center;
+}
+
+/* grid typography */
 
 p {
     font-family: 'Libre Baskerville', serif;
     font-size: 1em;
-    line-height: 2em;
+    line-height: 1.8em;
     color: #777;
+    text-align: left;
 
 }
+
+/* introducion typography 1er grid item */
 
 p.name {
     font-family: 'Montserrat', sans-serif;
@@ -101,6 +126,8 @@ p.name {
     color: rgb(31, 70, 40);
     font-weight: 700;
 }
+
+/* introducion typography 1er grid item */
 
 p.job-title {
     font-family: 'Montserrat', sans-serif;
@@ -112,6 +139,8 @@ p.job-title {
 
 }
 
+/* introducion typography 1er grid item */
+
 p.location {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -120,33 +149,31 @@ p.location {
     text-transform: uppercase;
     font-size: 1em;
     margin-bottom: 5%;
-
 }
 
-button {
-    border-style: none;  
-    background-color: #9fbc55;
-}
-button:hover {
-    background-color: #758d38;
- 
-}
-
+/* introducion typography 1er grid item */
 
 p.button-texte {
-     font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-size: 1.5em;
-    font-weight: 700;
+    font-size: 1em;
+    font-weight: 600;
     color: rgb(31, 70, 40);
-  padding: 1% 1%;
-    
+    padding: 2% 7%;
+    border-radius: 5px;
+    background-color: #9ebe57;   
+}
+
+/* introducion typography 1er grid item */
+
+
+p.button-texte:hover {
+    background-color: #93b546; 
 }
 
 p.bio {
     margin-bottom: 10%;
 }
-
 
 
 /* bloc 2 icons rondes réseaux sociaux */
@@ -161,10 +188,17 @@ p.bio {
 /* bloc 2 icons rondes réseaux sociaux */
 
 .reseaux-sociaux div {
-    padding: 2%;
+    padding: 0% 2% 8% 2%;
 }
 
-/* grid "bilan de vitalité" */
+
+/* grid sections */
+.grid {
+    margin-bottom: 10%;
+}
+
+
+/* grid image gauche */
 
 .grid-container-gauche {
     display: grid;
@@ -173,7 +207,8 @@ p.bio {
     grid-gap: 0px;
 }
 
-/* template grid droite & "Education nutrionnelle" */
+/* grid image droite */
+
 
 .grid-container-droite {
     display: grid;
@@ -181,7 +216,6 @@ p.bio {
     grid-template-rows: 50px 480px 35px 65px;
     grid-gap: 0px;
 }
-
 
 /* grid fond  natropathie (introduction)*/
 
@@ -199,11 +233,8 @@ p.bio {
     background-image: url(img/stock-photo-water-drop-from-leaf-and-laboratory-for-natural-chemistry-concept-422217088.jpg);
     background-size: 180%;
     background-repeat: no-repeat;
-    background-position: top laft;
+    background-position: top left;
 }
-
-
-
 
 
 /* grid fond "bilan de vitalité" */
@@ -226,16 +257,12 @@ p.bio {
 }
 
 
-
 .slogan {
     grid-column: 1 /span 5;
     grid-row: 4;
     align-self: baseline;
-    justify-self: center;
+    text-align: center;
 }
-
-
-
 
 
 /* grid fond "Education nutrionnelle  */
@@ -261,7 +288,6 @@ p.bio {
 }
 
 
-
 /* grid image EDUCATION NUTRIIONELLE */
 
 .cont02-image {
@@ -273,17 +299,15 @@ p.bio {
     background-position: top right;
 }
 
-/* GESTION DU STRESS */
+/* grid  GESTION DU STRESS */
 
 .stress-fond {
     grid-column: 1 / span 5;
     grid-row: 1 / span 4;
-        background: linear-gradient(to bottom right, #e9dbcd, #f1e8df);
-    
- 
+    background: linear-gradient(to bottom right, #e9dbcd, #f1e8df);
 }
 
-/* GESTION DU STRESS */
+/* grid  GESTION DU STRESS */
 
 .stress-image {
     grid-column: 3/ span 2;
@@ -295,7 +319,7 @@ p.bio {
 }
 
 
-/* GROSSESSE */
+/* grid GROSSESSE */
 
 .grossesse-fond {
     grid-column: 1 / span 5;
@@ -304,7 +328,7 @@ p.bio {
       background: linear-gradient(to bottom right, #f7cfe1, #fbe5ef);
 }
 
-/* GROSSESSE */
+/* grid GROSSESSE */
 
 .grossesse-image {
     grid-column: 2/ 4;
@@ -316,41 +340,42 @@ p.bio {
 }
 
 
-p.temoignages
-{
-    padding: 3% 20% 0% 20%;
+/* div temoignages */
+
+p.temoignages {
+        padding: 3% 20%;
     font-style: italic;
 }
 
-p.temoignages-name
-{
-    padding: 0% 20%;
-     color: #fdb2a8;
+p.temoignages-name {
+    color: #fdb2a8;
     text-align: right;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight: 600;
+    padding: 0% 20%;
+}
+
+.button {
+    text-align: center;
 }
 
 p.button-temoignage {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    margin: auto;
     color: white;
     font-family: 'Montserrat', sans-serif;
     background-color: #fdb2a8;
-    margin: 4% auto;
-    padding: 1% 2%;
-    width: 35%;
-     font-size: 1em;
+    padding: 1% 6%;
+    margin: 2% 0% 5% 0%;
+    border-radius: 5px;
+    font-size: 1em;
     font-weight: 600;
-    text-transform: uppercase;
-    
+    text-transform: uppercase; 
+    text-align: center;
 }
 
-
 p.button-temoignage:hover {
-    background-color: #fb705d;
+    background-color: #fc9c8f;
 }
 
 /* slogan */
@@ -358,7 +383,6 @@ p.button-temoignage:hover {
 h3.naturopathie {
     color: rgba(159, 188, 85, 0.3);
 }
-
 
 h3.bilan {
     color: rgba(95, 75, 139, 0.2);
@@ -370,7 +394,6 @@ h3.cont02 {
 
 h3.massage {
     color: rgba(0, 0, 0, 0.2);
-
 }
 
 h3.grossesse {
@@ -381,8 +404,6 @@ h3.temoignages {
     color: #fdb2a8;
     text-align: center;
 }
-
-
 
 
 /* bloc texte dans chaque carton */
@@ -416,9 +437,7 @@ footer {
     font-weight:400;
     font-size: 11px;
     padding: 1.5% 1%;
-    color: rgba(255,255,255,0.8);
-    
-    
+    color: rgba(255,255,255,0.8); 
 }
 
 footer a {
@@ -433,9 +452,7 @@ footer a:visited {
      color: rgba(255,255,255,0.8);
 }
 
-
-
-/* liens */
+/* links */
 
 a {
     color: rgb(31,70,40);
@@ -450,7 +467,6 @@ a:visited {
     color: rgb(31, 70, 40);
 }
 
-
 /* responsive media queries */
 
 @media only screen and (max-width: 600px) {
@@ -458,6 +474,14 @@ a:visited {
         width: 100%;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .header1 {
+        width: 95%;
+        margin: auto;
+    }
+}
+
 
 @media only screen and (max-width: 600px) {
     nav {
@@ -471,7 +495,6 @@ a:visited {
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 120px 150px 150px auto;
-
     }
 }
 
@@ -482,7 +505,6 @@ a:visited {
         display: none;
     }
 }
-
 
 
 @media only screen and (max-width: 600px) {
@@ -501,7 +523,6 @@ a:visited {
     }
 }
 
-
 @media only screen and (max-width: 600px) {
     .descriptif {
         display: grid;
@@ -510,7 +531,6 @@ a:visited {
         padding: 8% 5% 20% 5%;
     }
 }
-
 
 @media only screen and (max-width: 600px) {
     .bilan-slogan {
@@ -528,48 +548,28 @@ a:visited {
         padding: 2%;
         text-align: right;
         grid-row: 1;
-
     }
 }
 
 @media only screen and (max-width: 600px) {
     h3.naturopathie {
-       display: none;
-
+       display: block;
     }
 }
-
-
-
 
 @media only screen and (max-width: 600px) {
     p.temoignages {
       padding: 1% 4%;
-
     }
 }
 
 @media only screen and (max-width: 600px) {
     p.button-temoignage {
       width: 80%;
-
     }
 }
-
 
 /* nav respsonsive */
-
-
-@media only screen and (max-width: 600px) {
-    .responsive-title {
-        display: block;
-        text-align: center;
-        font-size: 1.3em;
-        padding: 2% 0%;
-        color: rgb(31, 70, 40);
-    }
-}
-
 
 @media only screen and (max-width: 600px) {
     nav ul {
@@ -582,35 +582,14 @@ a:visited {
     }
 }
 
-
-
 @media only screen and (max-width: 600px) {
     nav li {
     background-color:  rgba(31, 70, 40, 0.3);
         color: white;
         padding: 2% 2%;
-        border-radius: 5px;
         margin: 2%;
     }
 }
-
-@media only screen and (max-width: 600px) {
-    .social-media-nav {
-    display: none;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .social-media-responsive2 {
-    display: block;
-    padding: 40% 0%;
-        font-size: 3em;
-    }
-}
-
-
-
-
 
 @media only screen and (max-width: 600px) {
     footer {
@@ -618,7 +597,6 @@ a:visited {
         text-align: center;
          line-height: 1.3em;
     flex-direction: column;
-
     }   
 }
 
@@ -626,11 +604,7 @@ a:visited {
 @media only screen and (max-width: 600px) {
     footer div {
       margin: 2% 5%;
-
     }   
 }
-
-
-
 
 
