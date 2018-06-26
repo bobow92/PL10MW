@@ -29,7 +29,7 @@
   if(!empty($_SESSION)){
    
        $inscription = $_SESSION['firstname']." ".$_SESSION['name'];
-       $connexion = "DECONNEXION";
+       $connexion = "";
        $urlconnect = $url."author/affiche/".$_SESSION['id_author'];
        $urldisconnect = $url."author/deconnexion";
        
@@ -44,7 +44,7 @@
 
 
     <!-- Navigation -->
-}
+
 <?php
   if(empty($_COOKIE)){
     echo"
@@ -117,7 +117,7 @@
               <div class="input-group">
                 <input type="text" class="form-control" placeholder="Que cherchez vous ?">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Rechercher</button>
+                  <button class="btn btn-secondary" type="button">Disabled</button>
                 </span>
               </div>
             </div>
@@ -152,7 +152,7 @@
              <div class="input-group">
                 <input type="email" class="form-control" name="newsletter" placeholder="leslie.cabarrus@gmail.com">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Envoyer</button>
+                  <button class="btn btn-secondary" type="button">Disabled</button>
                 </span>
               </div>
               </form>
@@ -168,10 +168,10 @@
           echo"<div class='profiling'>
               <ul class='navbar-nav ml-auto'>
                   <li class='nav-item'><a href='article/createArticle'>Ajouter un article</a></li>
-                  <li class='nav-item'><a href=''>Message</a></li>
-                  <li class='nav-item'><a href=''>News</a></li>
-                  <li class='nav-item'><a href=''>Notification</a></li>
-                  <li class='nav-item'><a href=''>Deconnexion</a></li>
+                  <li class='nav-item'><a href=''>Message (Disabled)</a></li>
+                  <li class='nav-item'><a href=''>News (Disabled)</a></li>
+                  <li class='nav-item'><a href=''>Notification (Disabled)</a></li>
+                  <li class='nav-item'><a href='".$urldisconnect."'>Deconnexion</a></li>
               </ul>
           </div>";
           }

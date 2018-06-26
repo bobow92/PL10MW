@@ -1,9 +1,7 @@
 
 <div class="col-md-8 inscription">
-<form method="post">
-<link rel="stylesheet" type="text/css" href="blog.css">
+<form method="post" enctype="multipart/form-data"> 
 <?php 
- 
 if(isset($erreur1)){
   echo $erreur1;
 }
@@ -45,9 +43,10 @@ if(isset($erreur0)){
           </div>
 
           <div class="form-group">
-            <label for="InputEmail">Image d'article<br><hr><label>
+            <label for="InputEmail">Importez l'image d'article<br><hr><label>
             <input type="file" class="form-control" id="exampleInputEmail1" name="img_article">
-            
+             
+                
           </div>
           
 

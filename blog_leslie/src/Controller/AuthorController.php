@@ -27,44 +27,56 @@ class AuthorController extends Controller
             $erreur3 = "";
             $erreur4 = "";
             $erreur0 = "";
+            // créer au préalables les messages d'erreurs.
                 if(isset($_POST['forminscription'])){
-
+                    // Verification : Si le formulaire existe..
                     $name  = htmlspecialchars($_POST['name']);
                     $firstname = htmlspecialchars($_POST['firstname']);
                     $email = htmlspecialchars($_POST['email']);
                     $email2 = htmlspecialchars($_POST['email2']); 
-                    $mdp = sha1($_POST['password']);
-                    $mdp2 = sha1($_POST['password2']);
-                    $birth_date = filter_var($_POST['birth_date'], FILTER_SANITIZE_STRING );
-                   
+                    $mdp = htmlspecialchars(sha1($_POST['password']));
+                    $mdp2 = htmlspecialchars(sha1($_POST['password2']));
+                    $birth_date = htmlspecialchars($_POST['birth_date']);
+                   // Verification : contenu Html et protégé des injections SQL
                   
                     if (!empty($_POST['name']) || !empty($_POST['firstname']) || !empty($_POST['email']) || !empty($_POST['password']) || !empty($_POST['birth_date']))
                     {
-
+                        // Verification :si le formulaire est vide..
                         
                         // $headers = 'From: ' . $email . '\r\n';
                         // $myEmail = 'contact@boris-aubrun.com'; 
                         // $subject = "Confirmation d'inscription";
                         $strname = strlen($name);
                         $strfirstname = strlen($firstname);
-                        
+                        $strmdp = strlen($_POST['password']);
+                            
                         if ($strname <= 255 || $strfirstname <= 255){
-
-                            if($email == $email2){
-
-                                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                                    
+                        // Verification : string Name et firstname ne plante pas la Bdd
+                            if(filter_var($email, FILTER_VALIDATE_EMAIL) && $email == $email2){
+                                // Verification : si les mails sont valides et identiques
+                                if (ctype_alpha($name) && ctype_alpha($firstname)) {
+                                     // Verification : si name et firstname sont alphabétiques
                                 
                                     if ($mdp == $mdp2) {
-
-                                        $erreur4 = '<p><strong style="color: red;!important">Votre compte a bien été crée.</strong></p>';
+                                        // Verification :si les mdp sont identiques
+                                        if ($strmdp >= 8) {
+                                            // Verification :si le mdp est supérieur ou égale à 8 caractères..
+                                            $erreur4 = '<p><strong style="color: green;!important">Votre compte a bien été crée.</strong></p>';
                                         
-                                        $authors = $this -> getModel() -> registerAuthor();
+                                             $authors = $this -> getModel() -> registerAuthor();
+                                        }
+                                        else{
+                                            $erreur4 = '<p><strong style="color: red;!important">Votre mot de passe dans être supérieur ou égale à 8 caractères.</strong></p>';
+                                        }
                                     }
                                     else{
                                         $erreur3 = '<p><strong style="color: red;!important">vos mot de passe ne correspondent pas</strong></p>';
                                     }
-                                }   
+                                }
+                                else{
+
+                                    $erreur2 = '<p><strong style="color: red;!important">Votre Nom et Prénom doit être alphabétique.</strong></p>';
+                                }
                             }
                             else{
                                 $erreur2 = '<p><strong style="color: red;!important">vos adresses email ne correspondent pas.</strong></p>';
@@ -101,10 +113,12 @@ class AuthorController extends Controller
             $erreur2 = "";
            
             if (isset($_POST['connexionform'])) {
+                // Verification :si le formualire existe
                 $email = htmlspecialchars($_POST['email']);
                 $password = sha1($_POST['password']);
+                // Hashing des mdp
                 if (!empty($email) && !empty($password)) {
-                     
+                     // Verification : si les post MAIL sont vides.
                       $connexion = $this -> getModel() -> connexion();
 
                     

@@ -19,10 +19,14 @@ class ArticleController extends Controller
     
     public function affiche($id){
         $donnees = $this -> getModel() -> getArticleById($id);
-   
+
+        
+        $comment = $this -> getModel() -> registerCommentaire($id);
+    
         $params = array(
           
             'donnees' => $donnees,
+            'comment' => $comment,
         );
 
         return $this -> render('template.html','/../base/view_articles.html', $params);
@@ -54,60 +58,69 @@ class ArticleController extends Controller
     }
 
 
+    public function createCommentaire(){
+
+        $donnees = $this -> getModel() -> registerCommentaire($id);
+   
+        $params = array(
+          
+            'donnees' => $donnees,
+        );
+
+        return $this -> render('template.html','/../base/view_articles_comment.html', $params);
+    }
+
     public function createArticle(){
-         $erreur1 = "";
+            $erreur1 = "";
             $erreur2 = "";
             $erreur3 = "";
             $erreur4 = "";
-            $erreur0 = "";
-                if(isset($_POST['formarticle'])){
-
-                    $title_article  = htmlspecialchars($_POST['title_article']);
+            $erreur0 = ""; // création des méssages d'erreurs
+                if(isset($_POST['formarticle'])){// Verification : si le formulaire existe
+                    if (!empty($_POST['title_article']) || !empty($_POST['content']) || !empty($_POST['category']) || !empty($_POST['img_article'])){
+                    $title_article = htmlspecialchars($_POST['title_article']);// Verification : définit comme un contenu html
                     $content = htmlspecialchars($_POST['content']);
                     $category = htmlspecialchars($_POST['category']);
-                    $img_article = $_FILE['img_article'];
-                    echo("<pre>");
-                    var_dump($_POST);
-                    echo("</pre>");
-                    echo("<pre>");
-                    var_dump($_FILE);
-                    echo("</pre>");
-
-                    if (!empty($_POST['title_article']) || !empty($_POST['content']) || !empty($_POST['category']) || !empty($_FILE['img_article']))
-                    {
-
-                 
-                        $strtitle_article = strlen($title_article);
-                        $strcontent = strlen($content);
-                        
+                    $strtitle_article = strlen($title_article);
+                    $strcontent = strlen($content);
+                    $word_name = $_FILES['img_article']['name'];
+                    $word_type = $_FILES['img_article']['type'];
+                    $word_size = $_FILES['img_article']['size'];   
                         if ($strtitle_article <= 255 || $strcontent <= 1500){
 
-                            if($email == $email2){
+                                if ($_POST['category'] == "Categorie1" || $_POST['category'] == "Categorie2" || $_POST['category'] == "Categorie3" || $_POST['category'] == "Categorie4" || $_POST['category'] == "Categorie5"){
 
-                                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                                    
-                                
-                                    if ($mdp == $mdp2) {
-
-                                        $erreur4 = '<p><strong style="color: red;!important">Votre compte a bien été crée.</strong></p>';
+                                     if($_FILES['img_article']['type'] == 'image/png'){
+                                          
+                                         $word_tmp_name= $_FILES['img_article']['tmp_name'];
+                                         $slash = "\/";
+                                         move_uploaded_file($word_name.$word_type.$word_size, "blog_leslie\web\upload".time().$word_tmp_name);
                                         
-                                        $authors = $this -> getModel() -> registerArticle();
-                                    }
-                                    else{
-                                        $erreur3 = '<p><strong style="color: red;!important">vos mot de passe ne correspondent pas</strong></p>';
-                                    }
-                                }   
-                            }
-                            else{
-                                $erreur2 = '<p><strong style="color: red;!important">vos adresses email ne correspondent pas.</strong></p>';
-                            }
-                               
+                                          
+                                         
+                                         $erreur4 = '<p><strong style="color: green;!important">Votre article a bien été ajouter :).</strong></p>';
+                                          $authors = $this -> getModel() -> registerArticle(); 
+
+                                     }
+                                    
+                                    else {
+                                            $erreur4 = '<p><strong style="color: red;!important">L image doit être de type JPG, PNG ou GIF</strong></p>';
+                                        }    
+
+                                 }
+                                else{
+
+                                    $erreur3 = '<p><strong style="color: red;!important">Veillez à ne pas modifier l html ou sinon je vous retrouve.</strong></p>';
+                                }       
                         }
                         else{
-                            $erreur1 = '<p><strong style="color: red;!important">votre prénom ou nom dépasse 255 caractères.</strong></p>';
+                            $erreur1 = '<p><strong style="color: red;!important">Le titre ne peut exceder les 255 caractères. Le contenu ne peut exceder les 1500 caractères</strong></p>';
                         }
+                    
                     }
-
+                    else{
+                        $erreur0 = '<p><strong style="color: red;!important">Veuillez remplir les champs.</strong></p>';
+                    }
                 
                 }
                 else{

@@ -41,6 +41,7 @@ class AuthorModel extends Model
      public function connexion(){
          
             if(!empty($_POST['email']) && !empty($_POST['password'])){
+                // Verification :si les $_POST sont vides
             $email   = $_POST['email']; 
             $password   = sha1($_POST['password']); 
        
@@ -52,8 +53,10 @@ class AuthorModel extends Model
             );
 
                 if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    // Verification : SI le mail est valide
                     $rowcount = $resultat -> rowCount();
                      if ($rowcount > 0) {
+                        // Verification : Si la requete SQL a retourner au moins 1 élément.. il doit y en avoir qu'un seul!!
                     $result = $resultat->fetch();
                     $_SESSION['id_author'] = $result['id_author'];
                     $_SESSION['name'] = $result['name'];
@@ -62,14 +65,14 @@ class AuthorModel extends Model
                     header("Location: ".$url."../../index.php");
                     }
                     else{
-                        $erreur3 = '<p style="color: red;!important">Mauvais Email ou Mot de passe</p>';
+                        $erreur3 = '<p style="color: red!important;">Mauvais Email ou Mot de passe</p>';
                     }
 
                 }
 
         }
         else{
-            $erreur2 = '<p style="color: red;!important">Mauvais Identifiants. ( email ou mot de passe ) </p>';    
+            $erreur2 = '<p><strong style="color: blue!important;">Veuillez insérer vos identifiants</strong></p>';    
         }
         
     }
